@@ -1,11 +1,11 @@
-import Shell from "@components/layout/Shell";
+import Layout from "@components/layout/Layout";
 import Title from "@components/systems/Title";
 
 export default function Home() {
 
   return (
-    <Shell title="Dashboard">
+    <Layout title="Dashboard">
       <Title>Dashboard</Title>
-    </Shell>
+    </Layout>
   );
 }

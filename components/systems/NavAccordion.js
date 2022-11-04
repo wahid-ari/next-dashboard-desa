@@ -1,47 +1,56 @@
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import { useRef, useState, useEffect } from "react";
 
-export default function NavAccordion({ routeName, title, children }) {
+export default function NavAccordion({ title, routeName, icon, children }) {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [cek, setCek] = useState(false)
   const router = useRouter();
-  const [expand, setExpand] = useState(false);
-  const boxRef = useRef();
 
-  const handleToggle = () => {
-    setExpand(!expand);
-  };
-
+  // set sidebar nav accordion open or close based on route 
   useEffect(() => {
     if (router.pathname.includes(routeName)) {
-      setExpand(true);
+      setIsOpen(true)
     } else {
-      setExpand(false);
+      setIsOpen(false)
     }
-  }, [router.pathname]);
+    setCek(true)
+  }, [router.pathname])
 
   return (
-    <div>
-      <button
-        onClick={handleToggle}
-        className={`transition-all outline-none w-full px-4 py-3 flex justify-start items-center gap-2 rounded-lg font-bold text-gray-500 dark:text-neutral-500 hover:text-blue-800 dark:hover:text-neutral-400`}
-      >
-        <span className="flex-grow text-left font-bold text-xs">{title}</span>
-        <ChevronRightIcon
-          className={`${
-            expand ? "rotate-90" : "rotate-0"
-          } transition-all w-5 h-5`}
-        />
-      </button>
-      <div
-        ref={boxRef}
-        style={{
-          maxHeight: expand ? `${boxRef.current.scrollHeight ?? 0}px` : 0,
-        }}
-        className={`relative pl-4 transition-all overflow-hidden`}
-      >
-        {children}
-      </div>
-      <hr className="dark:border-neutral-800" />
-    </div>
-  );
+    cek ?
+      <>
+        <Disclosure defaultOpen={isOpen}>
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="transition-all outline-none w-full px-4 py-3 flex justify-start items-center gap-2 rounded-lg font-bold text-gray-500 dark:text-neutral-500 hover:text-blue-800 dark:hover:text-neutral-400">
+                <div className="flex-grow text-left font-bold text-xs">
+                  {icon}
+                  <span>{title}</span>
+                </div>
+                <ChevronRightIcon
+                  className={`transition-all duration-300 w-5 h-5 ${open ? 'transform rotate-90 transition-transform' : 'transition-transform'}`}
+                />
+              </Disclosure.Button>
+              <Transition
+                enter="transition ease-in-out duration-300"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in-out duration-100"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Disclosure.Panel className="relative pl-4 transition-all overflow-hidden">
+                  {children}
+                </Disclosure.Panel>
+              </Transition>
+            </>
+          )}
+        </Disclosure>
+        <hr className="dark:border-neutral-800" />
+      </>
+      : ""
+  )
 }

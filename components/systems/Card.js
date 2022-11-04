@@ -1,7 +1,7 @@
-export default function Card({ sx, children }) {
+export default function Card({ className, children }) {
   return (
     <div
-      className={`${sx} p-3 xl:p-6 rounded-lg border dark:border-neutral-800`}
+      className={`${className} p-3 xl:p-6 rounded-lg border dark:border-neutral-800`}
     >
       {children}
     </div>

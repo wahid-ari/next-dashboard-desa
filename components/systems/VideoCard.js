@@ -15,9 +15,8 @@ export default function VideoCard({ id, link, title, onDelete }) {
             allowFullScreen></iframe>
         </div>
         <div className="flex justify-center gap-2">
-          <Link href={`/webdesa/video/edit/${id}`}>
-            <a
-              className="text-xs mt-4 text-white bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded">Edit</a>
+          <Link href={`/webdesa/video/edit/${id}`} className="text-xs mt-4 text-white bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded">
+            Edit
           </Link>
           <button onClick={onDelete}
             className="text-xs mt-4 text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded">Hapus</button>

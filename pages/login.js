@@ -56,16 +56,18 @@ export default function Login() {
           message: error.response.data.message,
           isError: true,
         });
-        console.log(error);
+        console.error(error);
       }
     }
   }
 
   return (
     <div className="text-xs font-cool font-medium">
+
       <Head>
         <title>Login Admin | Desa Digital</title>
       </Head>
+
       <div
         className="min-h-screen w-screen sm:grid"
         style={{ gridTemplateColumns: "auto 1fr" }}
@@ -140,6 +142,7 @@ export default function Login() {
           <p className="text-white font-bold">2022</p>
         </div>
       </div>
+      
     </div>
   );
 }

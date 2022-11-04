@@ -12,9 +12,8 @@ export default function FotoCard({ id, image, title, onDelete }) {
             {title}
           </Heading>
           <div className="flex justify-center gap-2">
-            <Link href={`/webdesa/foto/edit/${id}`}>
-              <a><button
-                className="text-white text-xs bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded">Edit</button></a>
+            <Link href={`/webdesa/foto/edit/${id}`} className="text-white text-xs bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded">
+              Edit
             </Link>
             <button onClick={onDelete}
               className="text-white text-xs bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded">Hapus</button>

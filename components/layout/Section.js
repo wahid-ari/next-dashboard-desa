@@ -1,19 +1,19 @@
-export default function Section({ style, sx, children }) {
+export default function Section({ style, className, children }) {
   return (
     <section
       style={style}
-      className={`${sx} py-4 xl:py-8 border-b dark:border-neutral-800`}
+      className={`${className} py-4 xl:py-8 border-b dark:border-neutral-800`}
     >
       {children}
     </section>
   );
 }
 
-Section.small = ({ style, sx, children }) => {
+Section.small = ({ style, className, children }) => {
   return (
     <section
       style={style}
-      className={`${sx} py-2 my-2 border-b dark:border-neutral-800`}
+      className={`${className} py-2 my-2 border-b dark:border-neutral-800`}
     >
       {children}
     </section>

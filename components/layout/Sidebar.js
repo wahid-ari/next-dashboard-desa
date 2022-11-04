@@ -34,6 +34,7 @@ export default function Sidebar() {
       className={`${showNav ? "fixed xl:relative" : "hidden xl:flex xl:sticky top-0"
         } z-50 w-screen xl:w-60 flex flex-nowrap flex-col bg-white dark:bg-neutral-900 border-r dark:border-neutral-800 max-h-screen h-screen`}
     >
+
       <div className="flex justify-between items-center gap-2 px-4">
         <button className="xl:hidden" onClick={hideMenu}>
           <XIcon className="w-5 h-5 dark:text-white" />
@@ -48,11 +49,14 @@ export default function Sidebar() {
           <div className="h-4 w-4 bg-white rounded-full absolute top-0.5 transition-all dark:left-[1.15rem] left-[0.15rem]"></div>
         </div>
       </div>
+
       <div className="pt-4 border-t dark:border-neutral-800 flex flex-nowrap flex-col flex-grow overflow-auto px-4 scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700">
+        
         <NavLink isHome href="/" icon={<ViewGridIcon className="w-4 h-4" />}>
           Dashboard
         </NavLink>
-        <NavAccordion title="Design System" routeName="designsystem">
+
+        <NavAccordion title="Design System" routeName="design">
           <NavLink
             href="/design"
             icon={<ArrowSmRightIcon className="w-4 h-4" />}
@@ -60,6 +64,7 @@ export default function Sidebar() {
             Example
           </NavLink>
         </NavAccordion>
+
         <NavAccordion title="Keuangan" routeName="keuangan">
           <NavLink
             href="/keuangan"
@@ -68,13 +73,15 @@ export default function Sidebar() {
             Dana Desa
           </NavLink>
         </NavAccordion>
-        <br />
-        <NavLink href="/settings" icon={<CogIcon className="w-4 h-4" />}>
+
+        <NavLink href="/settings" icon={<CogIcon className="w-4 h-4" />} className="mt-3">
           Settings
         </NavLink>
+
       </div>
+
       <hr className="dark:border-neutral-800" />
-      <div className="px-4 pt-2 pb-3">
+      <div className="px-4 py-2">
         <button
           onClick={() => router.push('/login')}
           className="transition-all w-full px-4 py-2 flex justify-start items-center gap-3 text-xs font-semibold rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-800 dark:text-red-500 dark:hover:text-red-400"
@@ -82,6 +89,7 @@ export default function Sidebar() {
           Log out
         </button>
       </div>
+
     </div>
   );
 }

@@ -19,7 +19,7 @@ import Modal from "@components/layout/Modal";
 import Progress from "@components/systems/Progress";
 import Radio from "@components/systems/Radio";
 import Section from "@components/systems/Section";
-import Shell from "@components/layout/Shell";
+import Layout from "@components/layout/Layout";
 import Shimer from "@components/systems/Shimer";
 import Tab from "@components/systems/Tab";
 import Table from "@components/systems/Table";
@@ -130,7 +130,7 @@ export default function Example() {
       }
       console.log(valid);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
 
@@ -163,7 +163,7 @@ export default function Example() {
   const onPrev = () => { };
 
   return (
-    <Shell title="Design System">
+    <Layout title="Design System">
       <Title>Example</Title>
       <Section
         id="tableofcontent"
@@ -255,6 +255,9 @@ export default function Example() {
           </span>
           <span className="underline block mb-3">
             <Link href="#text">Text</Link>
+          </span>
+          <span className="underline block mb-3">
+            <Link href="#card">Card</Link>
           </span>
         </div>
       </Section>
@@ -650,7 +653,7 @@ export default function Example() {
         <Radio name="radio" label="Disabled Checked Radio" defaultChecked />
       </Section>
       <Section id="shimer" name="Shimer" noChildren noProps>
-        <Card sx="!bg-white dark:!bg-neutral-900">
+        <Card clasName="!bg-white dark:!bg-neutral-900">
           <Shimer className="max-w-[5rem]" />
           <Shimer className="max-w-[16rem]" />
           <Shimer className="max-w-[16rem]" />
@@ -767,6 +770,15 @@ export default function Example() {
       >
         <Text>Halo semuanya</Text>
       </Section>
-    </Shell>
+      <Section
+        id="card"
+        name="Card"
+        props
+      >
+        <Card clasName="!bg-white dark:!bg-neutral-900">
+          <Text>Card Content</Text>
+        </Card>
+      </Section>
+    </Layout>
   );
 }
