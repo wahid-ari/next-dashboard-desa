@@ -34,7 +34,7 @@ export default function Breadcrumb() {
     >
       <ol className="inline-flex whitespace-nowrap flex-nowrap items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
-          <Link href="/" passHref className="transition-all font-semibold inline-flex items-center text-gray-400 dark:text-neutral-500 hover:text-gray-700 dark:hover:text-neutral-400">
+          <Link href="/" passHref className="transition-all font-semibold inline-flex items-center text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300">
             <ChevronRightIcon className="w-5 h-5" />
             Home
           </Link>

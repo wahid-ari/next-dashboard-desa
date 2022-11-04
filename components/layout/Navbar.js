@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <div className="xl:hidden h-11 bg-white dark:bg-neutral-900 dark:text-neutral-50 w-full flex justify-between items-center gap-4 pl-3 pr-4 border-b dark:border-neutral-800">
       <div className="flex gap-x-4">
-        <button className="outline-none">
+        <button className="outline-none" id="menu" aria-label="Menu">
           <MenuIcon className="h-5 w-5" onClick={showMenu} />
         </button>
         <p className="text-sm text-center font-bold xl:text-2xl">Desa Digital</p>

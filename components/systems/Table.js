@@ -29,7 +29,7 @@ export default function Table({
         </table>
       </div>
       {noPagination ? "" : (
-        <div className="text-xs text-neutral-500 bg-white font-semibold dark:bg-transparent dark:border-neutral-800">
+        <div className="text-xs text-gray-500 dark:text-neutral-400 bg-white font-semibold dark:bg-transparent dark:border-neutral-800">
           <div className="px-4 py-3 flex gap-2 justify-between items-center w-full">
             {rowPerPage === 5 ?
               totalData === 0 ? (
@@ -60,6 +60,7 @@ export default function Table({
             }
             <div className="flex items-center justify-end gap-2">
               <Button.secondary
+                id="prev" aria-label="Prev"
                 onClick={prev}
                 disabled={currentPage < 2}
                 className="w-8 h-8 !p-0 flex items-center justify-center"
@@ -67,6 +68,7 @@ export default function Table({
                 <ChevronLeftIcon className="w-4 h-4" />
               </Button.secondary>
               <Button.secondary
+                id="next" aria-label="Next"
                 onClick={next}
                 disabled={currentPage === totalPage}
                 className="w-8 h-8 !p-0 flex items-center justify-center"
