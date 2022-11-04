@@ -258,6 +258,7 @@ export default function Example() {
           </span>
         </div>
       </Section>
+
       <Section id="validation" name="Validation" noChildren noClassName noProps>
         <LabeledInput
           label="Username"
