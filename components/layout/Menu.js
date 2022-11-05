@@ -6,7 +6,7 @@ export default function Akun({ className }) {
     <Menu as="div" className={`relative ${className && className}`}>
       {({ open }) => (
         <>
-          <Menu.Button className="group inline-flex items-center w-full justify-center rounded-md pr-1.5 sm:pr-3 font-medium text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-300 focus:outline-none">
+          <Menu.Button className="group inline-flex items-center w-full justify-center rounded-md pr-1.5 sm:pr-3 font-semibold text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-300 focus:outline-none">
             Admin
             <ChevronDownIcon className={`${open ? 'rotate-180' : 'rotate-0'} ml-0.5 h-5 w-4 pb-0.5 transition-all duration-200`} aria-hidden="true" />
           </Menu.Button>
@@ -23,8 +23,7 @@ export default function Akun({ className }) {
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      className={`
-                  ${active ? 'bg-gray-100 text-blue-800 dark:bg-neutral-900 dark:text-gray-400 transition-all'
+                      className={`${active ? 'bg-gray-100 text-blue-800 dark:bg-neutral-900 dark:text-gray-400 transition-all'
                           : 'text-gray-500 dark:text-gray-400'
                         } flex w-full rounded px-2 py-1.5 text-xs mb-1`}
                     >
@@ -35,8 +34,7 @@ export default function Akun({ className }) {
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      className={`
-                  ${active ? 'bg-gray-100 text-blue-800 dark:bg-neutral-900 dark:text-gray-400 transition-all'
+                      className={`${active ? 'bg-gray-100 text-blue-800 dark:bg-neutral-900 dark:text-gray-400 transition-all'
                           : 'text-gray-500 dark:text-gray-400'
                         } flex w-full rounded px-2 py-1.5 text-xs`}
                     >
