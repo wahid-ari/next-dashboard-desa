@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         cool: ["PlusJakartaSans", "sans-serif"],
       },
+      transitionProperty: {
+        'max-height': 'max-height',
+      },
     },
   },
   variants: {

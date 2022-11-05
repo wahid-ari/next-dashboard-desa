@@ -32,6 +32,7 @@ export default function MultipleSelect({
           {label}
         </label>
         <button
+        aria-label="multiple select"
           ref={buttonRef}
           onBlur={setBlur}
           onClick={onClick}

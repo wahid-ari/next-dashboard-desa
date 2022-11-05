@@ -18,7 +18,7 @@ export default function Navbar() {
         <button className="outline-none" id="menu" aria-label="Menu">
           <MenuIcon className="h-5 w-5" onClick={showMenu} />
         </button>
-        <p className="text-sm text-center font-bold xl:text-2xl">Desa Digital</p>
+        <p className="text-sm text-center font-bold xl:text-2xl text-neutral-800 dark:text-neutral-100">Desa Digital</p>
       </div>
       
       <div className="flex items-center gap-3">
@@ -26,11 +26,11 @@ export default function Navbar() {
         <div className="cursor-pointer pt-1">
           {darkMode ?
             <button onClick={() => setDarkMode(!darkMode)} aria-label="Light">
-              <SunIcon className="h-5 w-5 text-neutral-400 hover:text-neutral-300 transition-all" />
+              <SunIcon className="h-5 w-5 text-neutral-400 hover:text-neutral-200 transition-all" />
             </button>
             :
             <button onClick={() => setDarkMode(!darkMode)} aria-label="Dark">
-              <MoonIcon className="h-5 w-5 text-neutral-500 hover:text-neutral-600 transition-all" />
+              <MoonIcon className="h-5 w-5 text-gray-500 hover:text-gray-700 transition-all" />
             </button>
           }
         </div>

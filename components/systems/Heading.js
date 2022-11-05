@@ -4,7 +4,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
       <h1
         className={`${
           className ? className + " " : ""
-        }dark:text-white text-3xl mb-8`}
+        }text-neutral-800 dark:text-neutral-100 text-3xl mb-4`}
         {...rest}
       >
         {children}
@@ -15,7 +15,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
       <h2
         className={`${
           className ? className + " " : ""
-        }dark:text-white text-2xl mb-6`}
+        }text-neutral-800 dark:text-neutral-100 text-2xl mb-4`}
         {...rest}
       >
         {children}
@@ -26,7 +26,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
       <h3
         className={`${
           className ? className + " " : ""
-        }dark:text-white text-xl mb-4`}
+        }text-neutral-800 dark:text-neutral-100 text-xl mb-4`}
         {...rest}
       >
         {children}
@@ -37,7 +37,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
     <h4
       className={`${
         className ? className + " " : ""
-      }dark:text-white text-lg mb-2`}
+      }text-neutral-800 dark:text-neutral-100 text-lg mb-4`}
       {...rest}
     >
       {children}

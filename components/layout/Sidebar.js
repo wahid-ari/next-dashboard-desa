@@ -38,17 +38,17 @@ export default function Sidebar() {
         <button className="xl:hidden" onClick={hideMenu} id="closemenu" aria-label="Close Menu">
           <XIcon className="w-5 h-5 dark:text-white" />
         </button>
-        <p className="text-sm text-left font-bold py-3 dark:text-neutral-50">
+        <p className="text-sm text-left font-bold py-3 text-neutral-800 dark:text-neutral-100">
           Desa Digital
         </p>
         <div className="cursor-pointer pt-1">
           {darkMode ?
             <button onClick={() => setDarkMode(!darkMode)} aria-label="Light">
-              <SunIcon className="h-5 w-5 text-neutral-400 hover:text-neutral-300 transition-all" />
+              <SunIcon className="h-5 w-5 text-neutral-400 hover:text-neutral-200 transition-all" />
             </button>
             :
             <button onClick={() => setDarkMode(!darkMode)} aria-label="Dark">
-              <MoonIcon className="h-5 w-5 text-neutral-500 hover:text-neutral-600 transition-all" />
+              <MoonIcon className="h-5 w-5 text-gray-500 hover:text-gray-700 transition-all" />
             </button>
           }
         </div>
@@ -88,8 +88,9 @@ export default function Sidebar() {
       <div className="px-4 py-2">
         <button
           onClick={() => router.push('/login')}
-          className="transition-all w-full px-4 py-2 flex justify-start items-center gap-3 text-xs font-semibold rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-800 dark:text-red-500 dark:hover:text-red-400"
-        ><LogoutIcon className="w-4 h-4" />
+          className="transition-all w-full px-4 py-2 flex justify-start items-center gap-2 text-xs font-semibold rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-600"
+        >
+          <LogoutIcon className="w-4 h-4" />
           Log out
         </button>
       </div>

@@ -3,6 +3,8 @@ import { useState } from "react";
 import * as yup from "yup";
 import useToast from "@utils/useToast";
 import useModal from "@utils/useModal";
+import Layout from "@components/layout/Layout";
+import Modal from "@components/layout/Modal";
 import Badge from "@components/systems/Badge";
 import Button from "@components/systems/Button";
 import Card from "@components/systems/Card";
@@ -15,17 +17,17 @@ import Label from "@components/systems/Label";
 import LabeledInput from "@components/systems/LabeledInput";
 import LinkButton from "@components/systems/LinkButton";
 import MultipleSelect from "@components/systems/MultipleSelect";
-import Modal from "@components/layout/Modal";
 import Progress from "@components/systems/Progress";
 import Radio from "@components/systems/Radio";
-import Section from "@components/systems/Section";
-import Layout from "@components/layout/Layout";
+import Wrapper from "@components/systems/Wrapper";
 import Shimer from "@components/systems/Shimer";
 import Tab from "@components/systems/Tab";
 import Table from "@components/systems/Table";
 import Tag from "@components/systems/Tag";
 import Text from "@components/systems/Text";
 import Title from "@components/systems/Title";
+import Section from "@components/systems/Section";
+import { ArrowNarrowRightIcon, ArrowRightIcon, ArrowSmRightIcon } from "@heroicons/react/outline";
 
 export default function Example() {
   const { modal, isHidden, dismissModal, revealModal } = useModal();
@@ -165,7 +167,8 @@ export default function Example() {
   return (
     <Layout title="Design System">
       <Title>Example</Title>
-      <Section
+
+      <Wrapper
         id="tableofcontent"
         name="Table of Content"
         noChildren
@@ -189,6 +192,9 @@ export default function Example() {
           </span>
           <span className="underline block mb-3">
             <Link href="#button">Button</Link>
+          </span>
+          <span className="underline block mb-3">
+            <Link href="#linkbutton">LinkButton</Link>
           </span>
           <span className="underline block mb-3">
             <Link href="#checkbox">Checkbox</Link>
@@ -219,9 +225,6 @@ export default function Example() {
           </span>
           <span className="underline block mb-3">
             <Link href="#labeledinputdisabled">LabeledInput.disabled</Link>
-          </span>
-          <span className="underline block mb-3">
-            <Link href="#linkbutton">LinkButton</Link>
           </span>
           <span className="underline block mb-3">
             <Link href="#multipleselect">MultipleSelect</Link>
@@ -259,10 +262,13 @@ export default function Example() {
           <span className="underline block mb-3">
             <Link href="#card">Card</Link>
           </span>
+          <span className="underline block mb-3">
+            <Link href="#section">Section</Link>
+          </span>
         </div>
-      </Section>
+      </Wrapper>
 
-      <Section id="validation" name="Validation" noChildren noClassName noProps>
+      <Wrapper id="validation" name="Validation" noChildren noClassName noProps>
         <LabeledInput
           label="Username"
           name="username"
@@ -292,8 +298,9 @@ export default function Example() {
           onChange={handleUserChange}
         />
         <Button onClick={checkValid}>Submit</Button>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="usemodal"
         name="useModal (hook require Modal component)"
         noChildren
@@ -337,8 +344,9 @@ export default function Example() {
           onDismiss={dismissModal}
           onConfirm={onConfirm}
         />
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="usetoast"
         name="useToast (hook)"
         noProps
@@ -404,13 +412,15 @@ export default function Example() {
           <br />
           {`};`}
         </code>
-      </Section>
+      </Wrapper>
+
       <div className="flex flex-wrap items-center gap-2">
         <Button onClick={addToast}>Show Me Toast</Button>
         <Button onClick={addToastError}>Show Me Error Toast</Button>
         <Button onClick={toastAsync}>Toast with async</Button>
       </div>
-      <Section
+
+      <Wrapper
         id="badge"
         name="Badge"
         variant={["dark", "red", "green", "yellow", "indigo", "pink"]}
@@ -438,20 +448,45 @@ export default function Example() {
           <Badge.purple isLarge>purple</Badge.purple>
           <Badge.pink isLarge>pink</Badge.pink>
         </div>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="button"
         name="Button"
-        variant={["secondary", "tertary"]}
+        variant={["success", "danger", "secondary", "tertary"]}
         props={["type", "value", "disabled", "onClick"]}
       >
         <div className="flex flex-wrap items-center gap-2">
-          <Button>Hei there, primary button</Button>
-          <Button.secondary>Hei there, secondary button</Button.secondary>
-          <Button.tertary>Hei there, tertary button</Button.tertary>
+          <Button>Primary</Button>
+          <Button.success>Success</Button.success>
+          <Button.danger className="flex gap-2 items-center">
+            <ArrowSmRightIcon className="h-4 w-4" />
+            Danger
+          </Button.danger>
+          <Button.secondary>Secondary</Button.secondary>
+          <Button.tertary>Tertary</Button.tertary>
         </div>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
+        id="linkbutton"
+        name="LinkButton"
+        variant={["secondary", "tertary"]}
+        props={["href"]}
+      >
+        <div className="flex flex-wrap items-center gap-2">
+          <LinkButton href="/" className="flex gap-2 items-center">
+            <ArrowSmRightIcon className="h-5 w-5" />
+            TambahLink to some page
+          </LinkButton>
+          <LinkButton.secondary href="/">
+            Link to some page
+          </LinkButton.secondary>
+          <LinkButton.tertary href="/">Link to some page</LinkButton.tertary>
+        </div>
+      </Wrapper>
+
+      <Wrapper
         id="checkbox"
         name="Checkbox"
         variant={["disabled"]}
@@ -462,13 +497,15 @@ export default function Example() {
         <Checkbox name="checkbox 1" label="Checkbox" />
         <Checkbox.disabled name="Disabled Checkbox" />
         <Checkbox.disabled name="Disabled Checked Checkbox" defaultChecked />
-      </Section>
-      <Section id="container" name="Container" props={["small"]} noWrap>
+      </Wrapper>
+
+      <Wrapper id="container" name="Container" props={["small"]} noWrap>
         <Container>
           <Text>Content</Text>
         </Container>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="dropdown"
         name="Dropdown"
         props={["id", "name", "label", "show", "value", "onClick", "onBlur"]}
@@ -492,22 +529,26 @@ export default function Example() {
             );
           })}
         </Dropdown>
-      </Section>
-      <Section id="dropdownitem" name="Dropdown.item" noClassName noWrap />
-      <Section id="heading" name="Heading" props={["h1", "h2", "h3"]}>
+      </Wrapper>
+
+      <Wrapper id="dropdownitem" name="Dropdown.item" noClassName noWrap />
+
+      <Wrapper id="heading" name="Heading" props={["h1", "h2", "h3"]}>
         <Heading h1>Heading 1</Heading>
         <Heading h2>Heading 2</Heading>
         <Heading h3>Heading 3</Heading>
         <Heading>Heading 4 (default)</Heading>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="input"
         name="Input"
         props={["type", "name", "placeholder", "value", "onChange"]}
       >
         <Input name="input" placeholder="Input default" />
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="inputdisabled"
         name="Input.disabled"
         props={["type", "name", "placeholder", "defaultValue"]}
@@ -517,11 +558,13 @@ export default function Example() {
           placeholder="Input default"
           defaultValue="Has a value"
         />
-      </Section>
-      <Section id="label" name="Label">
+      </Wrapper>
+
+      <Wrapper id="label" name="Label">
         <Label>Ut deserunt do est irure.</Label>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="labeledinput"
         name="LabeledInput"
         props={[
@@ -546,8 +589,9 @@ export default function Example() {
           placeholder="Your Password"
           type="password"
         />
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="labeledinputdisabled"
         name="LabeledInput.disabled"
         props={["label", "type", "name", "placeholder", "defaultValue"]}
@@ -558,22 +602,9 @@ export default function Example() {
           placeholder="confirmation"
           type="password"
         />
-      </Section>
-      <Section
-        id="linkbutton"
-        name="LinkButton"
-        variant={["secondary", "tertary"]}
-        props={["href"]}
-      >
-        <div className="flex flex-wrap items-center gap-2">
-          <LinkButton href="/">Link to some page</LinkButton>
-          <LinkButton.secondary href="/">
-            Link to some page
-          </LinkButton.secondary>
-          <LinkButton.tertary href="/">Link to some page</LinkButton.tertary>
-        </div>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="multipleselect"
         name="MultipleSelect"
         props={["label", "show", "value", "onClick", "onBlur"]}
@@ -619,14 +650,16 @@ export default function Example() {
             <Tag noX>Option 9</Tag>
           </MultipleSelect.item>
         </MultipleSelect>
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="multipleselectitem"
         name="MultipleSelect.item"
         noClassName
         noWrap
       />
-      <Section
+
+      <Wrapper
         id="progress"
         name="Progress"
         variant={["percentage"]}
@@ -639,8 +672,9 @@ export default function Example() {
         <Progress.percentage percent={0} />
         <br />
         <Progress.percentage percent={75} />
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="radio"
         name="Radio"
         variant={["disabled"]}
@@ -651,8 +685,9 @@ export default function Example() {
         <Radio name="radio" label="Radio" />
         <Radio name="radio" label="Disabled Radio" />
         <Radio name="radio" label="Disabled Checked Radio" defaultChecked />
-      </Section>
-      <Section id="shimer" name="Shimer" noChildren noProps>
+      </Wrapper>
+
+      <Wrapper id="shimer" name="Shimer" noChildren noProps>
         <Card clasName="!bg-white dark:!bg-neutral-900">
           <Shimer className="max-w-[5rem]" />
           <Shimer className="max-w-[16rem]" />
@@ -660,8 +695,9 @@ export default function Example() {
           <Shimer className="max-w-[16rem]" />
           <Shimer className="max-w-[16rem]" />
         </Card>
-      </Section>
-      <Section id="tab" name="Tab" noProps noWrap>
+      </Wrapper>
+
+      <Wrapper id="tab" name="Tab" noProps noWrap>
         <Tab className="mb-6">
           <Tab.item value={0} isActive={tabIndex === 0} onClick={handleChangeTab}>Tab 1</Tab.item>
           <Tab.item value={1} isActive={tabIndex === 1} onClick={handleChangeTab}>Tab 2</Tab.item>
@@ -687,14 +723,16 @@ export default function Example() {
           </div>
         )
         }
-      </Section>
-      <Section
+      </Wrapper>
+
+      <Wrapper
         id="tabitem"
         name="Tab.item"
         props={["value", "onClick", "isActive", "disabled"]}
         noWrap
       />
-      <Section
+
+      <Wrapper
         id="table"
         name="Table"
         props={[
@@ -760,17 +798,26 @@ export default function Example() {
             );
           })}
         </Table>
-      </Section>
-      <Section id="tabletr" name="Table.tr" noWrap />
-      <Section id="tabletd" name="Table.td" props={["shrink"]} noWrap />
-      <Section
+      </Wrapper>
+
+      <Wrapper id="tabletr" name="Table.tr" noWrap />
+
+      <Wrapper id="tabletd" name="Table.td" props={["shrink"]} noWrap />
+
+      <Wrapper
         id="text"
         name="Text"
-        variant={["semibold", "bold", "extrabold"]}
+        variant={["light", "medium", "semibold", "bold", "extrabold"]}
       >
-        <Text>Halo semuanya</Text>
-      </Section>
-      <Section
+        <Text.light>Light</Text.light>
+        <Text>Default</Text>
+        <Text.medium>Medium</Text.medium>
+        <Text.semibold>Semibold</Text.semibold>
+        <Text.bold>Bold</Text.bold>
+        <Text.extrabold>Extrabold</Text.extrabold>
+      </Wrapper>
+
+      <Wrapper
         id="card"
         name="Card"
         props
@@ -778,7 +825,22 @@ export default function Example() {
         <Card clasName="!bg-white dark:!bg-neutral-900">
           <Text>Card Content</Text>
         </Card>
-      </Section>
+      </Wrapper>
+
+      <Wrapper
+        id="section"
+        name="Section"
+        props
+        variant={["small"]}
+      >
+        <Section>
+          <Text>Section Default</Text>
+        </Section>
+        <Section.small>
+          <Text>Section Small</Text>
+        </Section.small>
+      </Wrapper>
+
     </Layout>
   );
 }

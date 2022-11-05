@@ -38,7 +38,7 @@ export default function Layout({ children, title, description }) {
             <Menu />
           </div>
 
-          <div className="pl-2 pr-4 sm:pl-4 sm:pr-6 py-5">
+          <div className="pl-2 pr-4 sm:pl-4 sm:pr-6 py-4">
             {children}
           </div>
 

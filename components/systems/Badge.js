@@ -19,7 +19,7 @@ Badge.dark = ({ className, isLarge, children, ...rest }) => {
       {...rest}
       className={`${
         className ? className + " " : ""
-      }font-semibold whitespace-nowrap bg-gray-100 dark:bg-gray-600 dark:bg-opacity-10 text-gray-600 ${
+      }font-semibold whitespace-nowrap bg-gray-100 dark:bg-gray-600 dark:bg-opacity-10 text-gray-600 dark:text-gray-400 ${
         isLarge ? "text-sm" : "text-xs"
       } mr-2 px-[0.625rem] pt-[0.1rem] pb-[0.125rem] rounded-full`}
     >
