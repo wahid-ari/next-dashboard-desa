@@ -34,9 +34,9 @@ export default function DanaDesa() {
 	return (
 		<Layout title="Dana Desa">
 
-			<div className="flex flex-wrap justify-between items-center mb-6">
+			<div className="flex flex-wrap justify-between items-center mb-6 gap-y-3">
 				<Title>Dana Desa</Title>
-				<LinkButton href="/keuangan" className="flex gap-2 items-center mt-2 sm:mt-0">
+				<LinkButton href="/keuangan" className="flex gap-2 items-center">
 					<PlusSmIcon className="h-5 w-5" />Tambah
 				</LinkButton>
 			</div>

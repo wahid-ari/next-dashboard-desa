@@ -14,10 +14,9 @@ export default function Settings() {
   return (
     <Layout title="Settings">
       <Title>Settings</Title>
-      <Text className="mt-5">Dark Mode</Text>
-      <br />
-      <div onClick={handleDarkMode} className="transition-all cursor-pointer w-16 h-8 dark:bg-sky-600 bg-neutral-300 rounded-full relative">
-        <div className="h-6 w-6 bg-white rounded-full absolute top-1 transition-all dark:left-9 left-1"></div>
+      <Text className="mt-5 mb-2">Dark Mode</Text>
+      <div onClick={handleDarkMode} className="transition-all cursor-pointer w-14 h-7 dark:bg-sky-600 bg-neutral-300 rounded-full relative">
+        <div className="h-5 w-5 bg-white rounded-full absolute top-1 transition-all dark:left-8 left-1"></div>
       </div>
     </Layout>
   );

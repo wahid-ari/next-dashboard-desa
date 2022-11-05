@@ -32,10 +32,10 @@ export default function Breadcrumb() {
       className="flex w-full text-xs"
       aria-label="Breadcrumb"
     >
-      <ol className="inline-flex whitespace-nowrap flex-nowrap items-center space-x-1 md:space-x-3">
+      <ol className="inline-flex whitespace-nowrap flex-nowrap items-center space-x-1 md:space-x-2">
         <li className="inline-flex items-center">
           <Link href="/" passHref className="transition-all font-semibold inline-flex items-center text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:hover:text-neutral-300">
-            <ChevronRightIcon className="w-5 h-5" />
+            <ChevronRightIcon className="w-5 h-5 mr-1" />
             Home
           </Link>
         </li>
@@ -45,7 +45,7 @@ export default function Breadcrumb() {
               return (
                 <li aria-current="page" key={index} className="flex items-center">
                   <ChevronRightIcon className="w-5 h-5 text-gray-400" />
-                  <span className="ml-1 font-semibold text-blue-800 dark:text-sky-500 md:ml-2">
+                  <span className="ml-1 font-semibold text-blue-800 dark:text-sky-500 mr-4">
                     {capitalizeFirstLetter(path)}
                   </span>
                 </li>
@@ -62,7 +62,7 @@ export default function Breadcrumb() {
                       "/" +
                       path
                     }
-                    className="transition-all ml-1 font-semibold text-gray-400 dark:text-neutral-500 hover:text-gray-700 dark:hover:text-neutral-400 md:ml-2"
+                    className="transition-all ml-1 font-semibold text-gray-400 dark:text-neutral-500 hover:text-gray-700 dark:hover:text-neutral-400"
                   >
                     {capitalizeFirstLetter(path)}
                   </Link>

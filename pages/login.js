@@ -72,7 +72,7 @@ export default function Login() {
         className="min-h-screen w-screen sm:grid"
         style={{ gridTemplateColumns: "auto 1fr" }}
       >
-        <div className="banner p-8 flex flex-col justify-between gap-2 sm:hidden">
+        <div className="sm:hidden banner p-8 flex flex-col justify-between gap-2">
           <div>
             <h1 className="text-white font-bold text-4xl">Desa Digital</h1>
           </div>
@@ -128,7 +128,7 @@ export default function Login() {
             <Button onClick={handleLogin} className="w-full">Login Admin</Button>
           </div>
         </div>
-        <div className="banner px-8 py-12 flex-col justify-between gap-2 hidden sm:flex">
+        <div className="hidden sm:flex banner px-8 py-12 flex-col justify-between gap-2">
           <div>
             <h1 className="text-white font-bold sm:text-5xl md:text-6xl">
               Desa Digital

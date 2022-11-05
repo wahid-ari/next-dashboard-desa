@@ -25,8 +25,8 @@ export default function NavAccordion({ title, routeName, icon, children }) {
         <Disclosure defaultOpen={isOpen}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="transition-all outline-none w-full px-4 py-3 flex justify-start items-center gap-2 rounded-lg font-bold text-gray-500 dark:text-neutral-500 hover:text-blue-800 dark:hover:text-neutral-400">
-                <div className="flex-grow text-left font-bold text-xs">
+              <Disclosure.Button className="transition-all outline-none w-full pl-3.5 py-3 flex justify-start items-center gap-2 rounded-lg font-bold text-gray-500 dark:text-neutral-500 hover:text-blue-800 dark:hover:text-neutral-400">
+                <div className="flex-grow text-left font-semibold text-xs">
                   {icon}
                   <span>{title}</span>
                 </div>
@@ -49,7 +49,7 @@ export default function NavAccordion({ title, routeName, icon, children }) {
             </>
           )}
         </Disclosure>
-        <hr className="dark:border-neutral-800" />
+        <hr className="dark:border-neutral-800 ml-3" />
       </>
       : ""
   )
