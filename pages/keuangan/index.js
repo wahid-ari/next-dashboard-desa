@@ -5,9 +5,12 @@ import { PlusSmIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import LinkButton from "@components/systems/LinkButton";
 import Badge from "@components/systems/Badge";
+import Dialog from "@components/systems/Dialog";
+import { useState } from "react";
 
 const danaDesa = [
 	{
+		id: 1,
 		tahun: 2010,
 		jenis: 1,
 		uraian: "Dana Desa",
@@ -15,6 +18,7 @@ const danaDesa = [
 		realisasi: 5000
 	},
 	{
+		id: 2,
 		tahun: 2015,
 		jenis: 2,
 		uraian: "Dana Desa",
@@ -22,6 +26,7 @@ const danaDesa = [
 		realisasi: 10000
 	},
 	{
+		id: 3,
 		tahun: 2020,
 		jenis: 3,
 		uraian: "Dana Desa",
@@ -31,6 +36,15 @@ const danaDesa = [
 ]
 
 export default function DanaDesa() {
+	const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+	const [data, setData] = useState()
+	const filteredData = danaDesa.filter(dana => dana.id === data)[0]
+
+	function handleDelete(id) {
+		setOpenDeleteDialog(true)
+		setData(id)
+	}
+
 	return (
 		<Layout title="Dana Desa">
 
@@ -83,13 +97,28 @@ export default function DanaDesa() {
 							<Link href={`/keuangan`} className="text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">
 								Edit
 							</Link>
-							<a href="#" className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600 ml-3">
+							<button onClick={() => handleDelete(item.id)} className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600 ml-3">
 								Hapus
-							</a>
+							</button>
 						</Table.td>
 					</Table.tr>
 				)}
 			</Table>
+
+			<Dialog
+				title="Delete Confirmation"
+				open={openDeleteDialog}
+				showIcon
+				isDanger
+				setOpen={setOpenDeleteDialog}
+				onClose={() => setOpenDeleteDialog(false)}
+				onConfirm={() => {
+					alert(`${filteredData.id} ${filteredData.tahun}`)
+					setOpenDeleteDialog(false)
+				}}
+			>
+				Sure want to delete {filteredData.id} {filteredData.tahun} ?
+			</Dialog>
 
 		</Layout>
 	);
