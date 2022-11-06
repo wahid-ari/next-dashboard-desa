@@ -20,7 +20,7 @@ export default function Dialog({ open, setOpen, title, children, isDanger, onClo
         >
           <DialogRadix.Overlay
             forceMount
-            className="fixed inset-0 z-50 bg-black/40 transition-opacity"
+            className="fixed inset-0 z-50 bg-black/40 dark:bg-black/70 transition-opacity"
           />
         </Transition.Child>
         <Transition.Child
