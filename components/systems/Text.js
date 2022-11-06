@@ -17,7 +17,7 @@ Text.light = ({ className, children, ...rest }) => {
       {...rest}
       className={`${
         className ? className + " " : ""
-      }font-light  text-xs text-neutral-700 dark:text-neutral-200`}
+      }font-light text-xs text-neutral-700 dark:text-neutral-200`}
     >
       {children}
     </p>
@@ -30,7 +30,7 @@ Text.medium = ({ className, children, ...rest }) => {
       {...rest}
       className={`${
         className ? className + " " : ""
-      }font-medium  text-xs text-neutral-700 dark:text-neutral-200`}
+      }font-medium text-xs text-neutral-700 dark:text-neutral-200`}
     >
       {children}
     </p>

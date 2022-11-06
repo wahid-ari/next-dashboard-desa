@@ -14,6 +14,7 @@ import {
 } from "@heroicons/react/outline";
 import NavLink from "@components/systems/NavLink";
 import NavAccordion from "@components/systems/NavAccordion";
+import clsx from "clsx";
 
 export default function Sidebar() {
   const router = useRouter();
@@ -54,7 +55,9 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="pt-4 border-t dark:border-neutral-800 flex flex-nowrap flex-col flex-grow overflow-auto px-4 scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700">
+      <div className={clsx("pt-4 px-4 border-t dark:border-neutral-800 flex flex-nowrap flex-col flex-grow overflow-auto",
+        "scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700"
+      )}>
 
         <NavLink isHome href="/" icon={<ViewGridIcon className="w-4 h-4" />}>
           Dashboard
@@ -88,7 +91,8 @@ export default function Sidebar() {
       <div className="px-4 py-2">
         <button
           onClick={() => router.push('/login')}
-          className="transition-all w-full px-4 py-2 flex justify-start items-center gap-2 text-xs font-semibold rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-600"
+          className={clsx("transition-all w-full px-4 py-2 flex justify-start items-center gap-2 text-xs font-semibold",
+            "rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-600")}
         >
           <LogoutIcon className="w-4 h-4" />
           Log out

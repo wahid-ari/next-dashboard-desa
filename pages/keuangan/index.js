@@ -5,6 +5,10 @@ import { PlusSmIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import LinkButton from "@components/systems/LinkButton";
 import Badge from "@components/systems/Badge";
+import { useState } from "react";
+import Modal from "@components/systems/Modal";
+import Button from "@components/systems/Button";
+import Text from "@components/systems/Text";
 
 const danaDesa = [
 	{
@@ -31,8 +35,26 @@ const danaDesa = [
 ]
 
 export default function DanaDesa() {
+	const [openModal, setOpenModal] = useState(false)
 	return (
 		<Layout title="Dana Desa">
+
+			<Button
+				onClick={() => setOpenModal(true)}
+			>
+				Open Modal
+			</Button>
+
+			<Modal
+				title="Confirm"
+				open={openModal}
+				onClose={() => setOpenModal(false)}
+				onConfirm={() => setOpenModal(false)}
+			>
+				<Text className="text-sm tracking-wide dark:!text-neutral-300">
+					Are you sure you want to deactivate your account?
+				</Text>
+			</Modal>
 
 			<div className="flex flex-wrap justify-between items-center mb-6 gap-y-3">
 				<Title>Dana Desa</Title>

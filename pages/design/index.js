@@ -21,15 +21,19 @@ import Progress from "@components/systems/Progress";
 import Radio from "@components/systems/Radio";
 import Wrapper from "@components/systems/Wrapper";
 import Shimer from "@components/systems/Shimer";
-import Tab from "@components/systems/Tab";
 import Table from "@components/systems/Table";
 import Tag from "@components/systems/Tag";
 import Text from "@components/systems/Text";
 import Title from "@components/systems/Title";
 import Section from "@components/systems/Section";
-import { ArrowNarrowRightIcon, ArrowRightIcon, ArrowSmRightIcon } from "@heroicons/react/outline";
+import { ArrowSmRightIcon } from "@heroicons/react/outline";
+import Tabs from "@components/systems/Tabs";
+import Dialog from "@components/systems/Dialog";
 
 export default function Example() {
+  const [openDialog, setOpenDialog] = useState(false);
+  const [openDangerDialog, setOpenDangerDialog] = useState(false);
+
   const { modal, isHidden, dismissModal, revealModal } = useModal();
   const [showMultiSelect, setShowMultiSelect] = useState(false);
   const [multiSelect, setMultiSelect] = useState([]);
@@ -148,12 +152,6 @@ export default function Example() {
     });
   };
 
-  const [tabIndex, setTabIndex] = useState(0);
-
-  const handleChangeTab = (e) => {
-    setTabIndex(parseInt(e.target.value));
-  };
-
   const onConfirm = () => {
     console.log("confirm");
     // your code before dismiss
@@ -182,6 +180,11 @@ export default function Example() {
           <span className="underline block mb-3">
             <Link href="#usemodal">
               useModal (hook require Modal component)
+            </Link>
+          </span>
+          <span className="underline block mb-3">
+            <Link href="#dialog">
+              Dialog
             </Link>
           </span>
           <span className="underline block mb-3">
@@ -242,10 +245,10 @@ export default function Example() {
             <Link href="#shimer">Shimer</Link>
           </span>
           <span className="underline block mb-3">
-            <Link href="#tab">Tab</Link>
+            <Link href="#tabs">Tabs</Link>
           </span>
           <span className="underline block mb-3">
-            <Link href="#tabitem">Tab.item</Link>
+            <Link href="#tabspanel">Tabs.panel</Link>
           </span>
           <span className="underline block mb-3">
             <Link href="#table">Table</Link>
@@ -344,6 +347,47 @@ export default function Example() {
           onDismiss={dismissModal}
           onConfirm={onConfirm}
         />
+      </Wrapper>
+
+      <Wrapper
+        id="dialog"
+        name="Dialog"
+        noClassName
+        noProps
+        props={["open", "setOpen", "title", "children", "isDanger", "onClose", "onConfirm", "showIcon"]}
+      >
+        <Button onClick={() => setOpenDialog(true)}>
+          Open Dialog
+        </Button>
+        <br />
+        <br />
+
+        <Dialog
+          title="Confirmation"
+          open={openDialog}
+          showIcon
+          setOpen={setOpenDialog}
+          onClose={() => setOpenDialog(false)}
+          onConfirm={() => setOpenDialog(false)}
+        >
+          Mollit incididunt ex exercitation sunt incididunt culpa reprehenderit esse magna laborum. Do velit ipsum consectetur aliquip mollit nisi irure quis Lorem eu non sit.
+        </Dialog>
+
+        <Button.danger onClick={() => setOpenDangerDialog(true)}>
+          Open Danger Dialog
+        </Button.danger>
+
+        <Dialog
+          title="Delete Confirmation"
+          open={openDangerDialog}
+          showIcon
+          isDanger
+          setOpen={setOpenDangerDialog}
+          onClose={() => setOpenDangerDialog(false)}
+          onConfirm={() => setOpenDangerDialog(false)}
+        >
+          Danger Content Fugiat consectetur nulla qui veniam. Aliquip ipsum dolore eiusmod Lorem ipsum fugiat.
+        </Dialog>
       </Wrapper>
 
       <Wrapper
@@ -697,40 +741,29 @@ export default function Example() {
         </Card>
       </Wrapper>
 
-      <Wrapper id="tab" name="Tab" noProps noWrap>
-        <Tab className="mb-6">
-          <Tab.item value={0} isActive={tabIndex === 0} onClick={handleChangeTab}>Tab 1</Tab.item>
-          <Tab.item value={1} isActive={tabIndex === 1} onClick={handleChangeTab}>Tab 2</Tab.item>
-          <Tab.item value={2} isActive={tabIndex === 2} onClick={handleChangeTab}>Tab 3</Tab.item>
-          <Tab.item value={3} isActive={tabIndex === 3} onClick={handleChangeTab}>Tab 4</Tab.item>
-          <Tab.item disabled>Disabled Tab</Tab.item>
-        </Tab>
-        {tabIndex === 0 ? (
-          <div className="mb-6 pl-2">
-            <Heading>Tab Content 1</Heading>
-          </div>
-        ) : tabIndex === 1 ? (
-          <div className="mb-6 pl-2">
-            <Heading>Tab Content 2</Heading>
-          </div>
-        ) : tabIndex === 2 ? (
-          <div className="mb-6 pl-2">
-            <Heading>Tab Content 3</Heading>
-          </div>
-        ) : (
-          <div className="mb-6 pl-2">
-            <Heading>Tab Content 4</Heading>
-          </div>
-        )
-        }
+      <Wrapper id="tabs" name="Tabs" props={["items"]} noWrap>
+        <Tabs items={["Tab A", "Tab B"]} className="mt-4">
+          <Tabs.panel>
+            <Heading>Tab Content A</Heading>
+          </Tabs.panel>
+          <Tabs.panel>
+            <Heading>Tab Content B</Heading>
+          </Tabs.panel>
+        </Tabs>
       </Wrapper>
 
       <Wrapper
         id="tabitem"
-        name="Tab.item"
-        props={["value", "onClick", "isActive", "disabled"]}
+        name="Tabs.panel"
+        noProps
         noWrap
-      />
+      >
+        <Tabs items={["Tab"]} className="mt-4">
+          <Tabs.panel>
+            <Heading>Tabs Panel</Heading>
+          </Tabs.panel>
+        </Tabs>
+      </Wrapper>
 
       <Wrapper
         id="table"

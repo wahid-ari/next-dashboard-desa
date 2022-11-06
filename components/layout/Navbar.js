@@ -3,6 +3,7 @@ import { MenuIcon } from "@heroicons/react/solid";
 import { GlobalContext } from "@utils/GlobalContext";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import Menu from './Menu'
+import clsx from "clsx";
 
 export default function Navbar() {
   const { setShowNav } = useContext(GlobalContext);
@@ -13,7 +14,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="xl:hidden sticky top-0 z-40 h-11 bg-white dark:bg-neutral-900 dark:text-neutral-50 w-full flex justify-between items-center gap-4 pl-2 pr-3 sm:pl-3 sm:pr-4 border-b dark:border-neutral-800">
+    <div className={clsx("xl:hidden sticky top-0 z-40 h-11 bg-white dark:bg-neutral-900 dark:text-neutral-50",
+      "w-full flex justify-between items-center gap-4 pl-2 pr-3 sm:pl-3 sm:pr-4 border-b dark:border-neutral-800")
+    }>
       <div className="flex gap-x-4">
         <button className="outline-none" id="menu" aria-label="Menu">
           <MenuIcon className="h-5 w-5" onClick={showMenu} />
