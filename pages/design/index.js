@@ -742,12 +742,15 @@ export default function Example() {
       </Wrapper>
 
       <Wrapper id="tabs" name="Tabs" props={["items"]} noWrap>
-        <Tabs items={["Tab A", "Tab B"]} className="mt-4">
+        <Tabs items={["Tab A", "Tab B", "Tab C"]} className="mt-4">
           <Tabs.panel>
             <Heading>Tab Content A</Heading>
           </Tabs.panel>
           <Tabs.panel>
             <Heading>Tab Content B</Heading>
+          </Tabs.panel>
+          <Tabs.panel>
+            <Heading>Tab Content C</Heading>
           </Tabs.panel>
         </Tabs>
       </Wrapper>
