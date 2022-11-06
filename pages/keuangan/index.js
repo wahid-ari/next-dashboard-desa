@@ -117,7 +117,7 @@ export default function DanaDesa() {
 					setOpenDeleteDialog(false)
 				}}
 			>
-				Sure want to delete {filteredData.id} {filteredData.tahun} ?
+				Sure want to delete {filteredData?.id} {filteredData?.tahun} ?
 			</Dialog>
 
 		</Layout>
