@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Link from "next/link";
 import { MenuIcon } from "@heroicons/react/solid";
 import { GlobalContext } from "@utils/GlobalContext";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
@@ -21,7 +22,9 @@ export default function Navbar() {
         <button className="outline-none" id="menu" aria-label="Menu">
           <MenuIcon className="h-5 w-5" onClick={showMenu} />
         </button>
-        <p className="text-base tracking-wide text-center font-semibold lg:text-2xl text-neutral-800 dark:text-neutral-100">Desa Digital</p>
+        <Link href="/" className="text-base tracking-wide text-center font-semibold lg:text-2xl text-neutral-800 dark:text-neutral-100 no-underline">
+          Desa Digital
+        </Link>
       </div>
 
       <div className="flex items-center gap-3">
