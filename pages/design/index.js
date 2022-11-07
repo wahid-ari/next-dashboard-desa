@@ -845,12 +845,12 @@ export default function Example() {
         name="Text"
         variant={["light", "medium", "semibold", "bold", "extrabold"]}
       >
-        <Text.light>Light</Text.light>
-        <Text>Default</Text>
-        <Text.medium>Medium</Text.medium>
-        <Text.semibold>Semibold</Text.semibold>
-        <Text.bold>Bold</Text.bold>
-        <Text.extrabold>Extrabold</Text.extrabold>
+        <Text.light className="mb-2">Light</Text.light>
+        <Text className="mb-2">Default</Text>
+        <Text.medium className="mb-2">Medium</Text.medium>
+        <Text.semibold className="mb-2">Semibold</Text.semibold>
+        <Text.bold className="mb-2">Bold</Text.bold>
+        <Text.extrabold className="mb-2">Extrabold</Text.extrabold>
       </Wrapper>
 
       <Wrapper

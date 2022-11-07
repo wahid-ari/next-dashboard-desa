@@ -7,7 +7,7 @@ export default function Modal({ open, title, children, isDanger, onClose, onConf
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="font-cool fixed z-50 inset-0 overflow-y-auto" open={open} onClose={onClose}>
+      <Dialog as="div" className="fixed z-50 inset-0 overflow-y-auto" open={open} onClose={onClose}>
         <div className="pt-4 px-4 text-center sm:block sm:p-0">
           <Transition.Child
             as={Fragment}

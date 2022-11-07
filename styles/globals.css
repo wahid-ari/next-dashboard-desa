@@ -44,39 +44,3 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(0.6);
   font-size: 16px !important;
 }
-
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-ExtraLight.woff2");
-	font-weight: 200;
-}
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-Light.woff2");
-	font-weight: 300;
-}
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-Regular.woff2");
-	font-weight: 400;
-}
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-Medium.woff2");
-	font-weight: 500;
-}
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-SemiBold.woff2");
-	font-weight: 600;
-}
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-Bold.woff2");
-	font-weight: 700;
-}
-@font-face {
-	font-family: PlusJakartaSans;
-	src: url("../public/assets/fonts/PlusJakarta/PlusJakartaSans-ExtraBold.woff2");
-	font-weight: 800;
-}

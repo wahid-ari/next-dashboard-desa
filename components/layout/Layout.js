@@ -19,7 +19,7 @@ export default function Layout({ children, title, description }) {
         <meta name="description" content={headDescription}></meta>
       </Head>
 
-      <div className="min-h-screen w-screen xl:grid text-xs font-cool font-medium bg-[#F8F9FD] dark:bg-neutral-900"
+      <div className="min-h-screen w-screen lg:grid text-sm font-inter bg-[#F8F9FD] dark:bg-neutral-900"
         style={{ gridTemplateColumns: "auto 1fr" }}>
 
         <Sidebar />
@@ -29,14 +29,14 @@ export default function Layout({ children, title, description }) {
           <Navbar />
 
           {/* Show on Mobile */}
-          <div className={clsx("xl:hidden flex gap-x-4 items-center justify-between border-b dark:border-neutral-800 pl-1 pr-3 sm:px-2 py-3",
+          <div className={clsx("lg:hidden flex gap-x-4 items-center justify-between border-b dark:border-neutral-800 pl-1 pr-3 sm:px-2 py-3",
             "bg-[#F8F9FD]/95 dark:bg-neutral-900/90 overflow-x-auto",
             "scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700")}>
             <Breadcrumb />
           </div>
 
           {/* Show on Desktop */}
-          <div className={clsx("hidden xl:flex gap-x-4 items-center justify-between border-b dark:border-neutral-800 pl-1 pr-3 sm:px-2 py-3",
+          <div className={clsx("hidden lg:flex gap-x-4 items-center justify-between border-b dark:border-neutral-800 pl-1 pr-3 sm:px-2 py-3",
             "z-40 sticky top-0 bg-[#F8F9FD]/95 dark:bg-neutral-900/90 supports-[backdrop-filter]:backdrop-blur-sm")}>
             <Breadcrumb />
             <Menu />

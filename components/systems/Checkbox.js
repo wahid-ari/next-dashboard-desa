@@ -9,7 +9,7 @@ export default function Checkbox({
   ...rest
 }) {
   return (
-    <div className="mb-3 text-xs">
+    <div className="mb-3 text-sm">
       <label className="relative cursor-pointer pl-6 select-none group pb-0.5 text-gray-800 dark:text-neutral-300">
         {label}
         <input
@@ -30,7 +30,7 @@ export default function Checkbox({
 
 Checkbox.disabled = ({ name, defaultChecked, ...rest }) => {
   return (
-    <div className="mb-3 text-xs cursor-not-allowed">
+    <div className="mb-3 text-sm cursor-not-allowed">
       <label className="pointer-events-none relative pl-6 select-none pb-0.5 text-gray-800 dark:text-neutral-300">
         {name}
         <input

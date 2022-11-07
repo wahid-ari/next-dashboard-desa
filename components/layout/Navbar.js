@@ -14,14 +14,14 @@ export default function Navbar() {
   };
 
   return (
-    <div className={clsx("xl:hidden sticky top-0 z-40 h-11 bg-white dark:bg-neutral-900 dark:text-neutral-50",
+    <div className={clsx("lg:hidden sticky top-0 z-40 h-11 bg-white dark:bg-neutral-900 dark:text-neutral-50",
       "w-full flex justify-between items-center gap-4 pl-2 pr-3 sm:pl-3 sm:pr-4 border-b dark:border-neutral-800")
     }>
       <div className="flex gap-x-4">
         <button className="outline-none" id="menu" aria-label="Menu">
           <MenuIcon className="h-5 w-5" onClick={showMenu} />
         </button>
-        <p className="text-sm text-center font-bold xl:text-2xl text-neutral-800 dark:text-neutral-100">Desa Digital</p>
+        <p className="text-base tracking-wide text-center font-semibold lg:text-2xl text-neutral-800 dark:text-neutral-100">Desa Digital</p>
       </div>
 
       <div className="flex items-center gap-3">
@@ -38,7 +38,7 @@ export default function Navbar() {
           }
         </div>
 
-        <Menu className="xl:hidden" />
+        <Menu className="lg:hidden" />
 
       </div>
     </div>

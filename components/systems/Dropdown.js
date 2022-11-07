@@ -32,7 +32,7 @@ export default function Dropdown({
   return (
     <div className="relative mb-4" ref={ref}>
       <div className="mb-1">
-        <label className="text-xs block text-gray-800 dark:text-neutral-300">
+        <label className="text-sm block text-gray-800 dark:text-neutral-300">
           {label}
         </label>
         <button
@@ -43,7 +43,7 @@ export default function Dropdown({
           name={name}
           onClick={onClick}
           onBlur={setBlur}
-          className="text-xs group flex items-center justify-between transition-all font-medium dark:text-neutral-100 bg-white dark:bg-neutral-900 w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 dark:ring-neutral-600 focus:ring-blue-800 dark:focus:ring-sky-900 border-gray-300 dark:border-neutral-800 focus:border-blue-800 dark:focus:border-sky-300 outline-none"
+          className="text-sm group flex items-center justify-between transition-all font-medium dark:text-neutral-100 bg-white dark:bg-neutral-900 w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 dark:ring-neutral-600 focus:ring-blue-800 dark:focus:ring-sky-900 border-gray-300 dark:border-neutral-800 focus:border-blue-800 dark:focus:border-sky-300 outline-none"
         >
           <span>{value}</span>
           <ChevronDownIcon
@@ -71,7 +71,7 @@ Dropdown.item = ({ children, ...rest }) => {
     <div className="flex">
       <button
         type="button"
-        className="text-xs outline-none flex-grow px-4 py-[0.6rem] border-b dark:border-neutral-800 flex items-center gap-2 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800 cursor-pointer"
+        className="text-sm outline-none flex-grow px-4 py-[0.6rem] border-b dark:border-neutral-800 flex items-center gap-2 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800 cursor-pointer"
         {...rest}
       >
         {children}

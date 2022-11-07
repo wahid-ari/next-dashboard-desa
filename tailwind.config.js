@@ -6,9 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        cool: ["PlusJakartaSans", "sans-serif"],
-      },
+      // fontFamily: {
+      //   cool: ["PlusJakartaSans", "sans-serif"],
+      // },
       transitionProperty: {
         'max-height': 'max-height',
       },

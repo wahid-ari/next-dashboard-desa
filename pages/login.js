@@ -62,7 +62,7 @@ export default function Login() {
   }
 
   return (
-    <div className="text-xs font-cool font-medium">
+    <div className="text-sm font-medium">
 
       <Head>
         <title>Login Admin | Desa Digital</title>
@@ -80,11 +80,11 @@ export default function Login() {
         </div>
         <div className="w-full px-8 md:px-16 py-12">
           <div className="w-full sm:max-w-md">
-            <Heading h1 className="font-bold !text-black">
+            <Heading h1 className="font-semibold !text-neutral-800 mb-6">
               Login Admin
             </Heading>
-            <div className="mb-4">
-              <label className="text-xs block text-gray-800" htmlFor="username">
+            <div className="mb-5">
+              <label className="text-sm block text-gray-800" htmlFor="username">
                 Username
               </label>
               <input
@@ -93,13 +93,13 @@ export default function Login() {
                 placeholder="Username"
                 value={form.username}
                 onChange={handleChange}
-                className="text-xs transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-blue-800 border-gray-300 focus:border-blue-800 outline-none"
+                className="text-sm transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-blue-800 border-gray-300 focus:border-blue-800 outline-none"
                 autoComplete="off"
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="text-xs block text-gray-800" htmlFor="password">
+            <div className="mb-5">
+              <label className="text-sm block text-gray-800" htmlFor="password">
                 Password
               </label>
               <div className="relative flex mb-4 items-center">
@@ -109,7 +109,7 @@ export default function Login() {
                   placeholder="Password"
                   value={form.password}
                   onChange={handleChange}
-                  className="text-xs transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-blue-800 border-gray-300 focus:border-blue-800 outline-none"
+                  className="text-sm transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-blue-800 border-gray-300 focus:border-blue-800 outline-none"
                   autoComplete="off"
                   required
                 />

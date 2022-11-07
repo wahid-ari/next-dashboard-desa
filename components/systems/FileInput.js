@@ -21,7 +21,7 @@ export default function FileInput({
   return (
     <div className="mb-4">
       <label
-        className="text-xs block text-gray-800 dark:text-neutral-300"
+        className="text-sm block text-gray-800 dark:text-neutral-300"
         htmlFor={name}
       >
         {label}
@@ -45,7 +45,7 @@ export default function FileInput({
         onChange={onChange}
         className={`${
           className ? className + " " : ""
-        }hidden text-xs transition-all font-medium dark:text-neutral-100 bg-white dark:bg-neutral-900 w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 dark:ring-neutral-600 focus:ring-blue-800 dark:focus:ring-sky-900 border-gray-300 dark:border-neutral-800 focus:border-blue-800 dark:focus:border-sky-300 outline-none`}
+        }hidden text-sm transition-all font-medium dark:text-neutral-100 bg-white dark:bg-neutral-900 w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 dark:ring-neutral-600 focus:ring-blue-800 dark:focus:ring-sky-900 border-gray-300 dark:border-neutral-800 focus:border-blue-800 dark:focus:border-sky-300 outline-none`}
         required
       />
     </div>

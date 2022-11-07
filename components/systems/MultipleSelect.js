@@ -38,7 +38,7 @@ export default function MultipleSelect({
           onClick={onClick}
           className="group flex items-center justify-between transition-all font-medium dark:text-neutral-100 bg-white dark:bg-neutral-900 w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 dark:ring-neutral-600 focus:ring-blue-800 dark:focus:ring-sky-900 border-gray-300 dark:border-neutral-800 focus:border-blue-800 dark:focus:border-sky-300 outline-none"
         >
-          <div className="text-xs flex flex-wrap gap-y-2">{value}</div>
+          <div className="text-sm flex flex-wrap gap-y-2">{value}</div>
           <ChevronDownIcon
             className={`h-4 w-4 transition-all text-gray-400 dark:text-neutral-600 ${
               show ? "rotate-180" : "rotate-0"

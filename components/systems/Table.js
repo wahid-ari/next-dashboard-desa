@@ -16,9 +16,9 @@ export default function Table({
   return (
     <div
       className={`${className ? className + " " : ""
-        }w-full xl:max-w-[calc(100vw_-_17rem)] rounded border dark:border-neutral-800 shadow-sm`}
+        }w-full lg:max-w-[calc(100vw_-_17rem)] rounded border dark:border-neutral-800 shadow-sm`}
     >
-      <div className="w-full xl:max-w-[calc(100vw_-_17rem)] overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700">
+      <div className="w-full lg:max-w-[calc(100vw_-_17rem)] overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700">
         <table className="w-full whitespace-nowrap table-auto text-neutral-700 dark:text-neutral-400">
           <thead>
             <tr className="border-b text-sm dark:border-neutral-800 font-bold bg-gray-50 dark:bg-[#202020] whitespace-nowrap">
@@ -29,7 +29,7 @@ export default function Table({
         </table>
       </div>
       {noPagination ? "" : (
-        <div className="text-xs text-gray-500 dark:text-neutral-400 bg-white font-semibold dark:bg-transparent dark:border-neutral-800">
+        <div className="text-xs text-gray-500 dark:text-neutral-400 bg-white font-medium dark:bg-transparent dark:border-neutral-800">
           <div className="px-4 py-3 flex gap-2 justify-between items-center w-full">
             {rowPerPage === 5 ?
               totalData === 0 ? (
@@ -88,7 +88,7 @@ Table.tr = ({ className, children, ...rest }) => {
     <tr
       {...rest}
       className={`${className ? className + " " : ""
-        }text-xs bg-white text-neutral-600 dark:text-neutral-200 dark:bg-transparent hover:bg-gray-50 border-b dark:border-neutral-800`}
+        }text-sm bg-white text-neutral-600 dark:text-neutral-200 dark:bg-transparent hover:bg-gray-50 border-b dark:border-neutral-800`}
     >
       {children}
     </tr>

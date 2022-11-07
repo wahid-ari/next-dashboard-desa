@@ -25,7 +25,7 @@ export default function OldNavAccordion({ routeName, title, children }) {
         onClick={handleToggle}
         className={`transition-all outline-none w-full px-4 py-3 flex justify-start items-center gap-2 rounded-lg font-bold text-gray-500 dark:text-neutral-500 hover:text-blue-800 dark:hover:text-neutral-400`}
       >
-        <span className="flex-grow text-left font-bold text-xs">{title}</span>
+        <span className="flex-grow text-left font-bold text-sm">{title}</span>
         <ChevronRightIcon
           className={`${
             expand ? "rotate-90" : "rotate-0"

@@ -31,15 +31,15 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`${showNav ? "fixed xl:relative" : "hidden xl:flex xl:sticky top-0"
-        } z-50 w-screen xl:w-60 flex flex-nowrap flex-col bg-white dark:bg-neutral-900 border-r dark:border-neutral-800 max-h-screen h-screen`}
+      className={`${showNav ? "fixed lg:relative" : "hidden lg:flex lg:sticky top-0"
+        } z-50 w-screen lg:w-60 flex flex-nowrap flex-col bg-white dark:bg-neutral-900 border-r dark:border-neutral-800 max-h-screen h-screen`}
     >
 
       <div className="flex justify-between items-center gap-2 px-4">
-        <button className="xl:hidden" onClick={hideMenu} id="closemenu" aria-label="Close Menu">
-          <XIcon className="w-5 h-5 dark:text-white" />
+        <button className="lg:hidden" onClick={hideMenu} id="closemenu" aria-label="Close Menu">
+          <XIcon className="w-5 h-5 text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition-all" />
         </button>
-        <p className="text-sm text-left font-bold py-3 text-neutral-800 dark:text-neutral-100">
+        <p className="tracking-wide text-base text-left font-semibold py-2.5 text-neutral-800 dark:text-neutral-100">
           Desa Digital
         </p>
         <div className="cursor-pointer pt-1">
@@ -91,7 +91,7 @@ export default function Sidebar() {
       <div className="px-4 py-2">
         <button
           onClick={() => router.push('/login')}
-          className={clsx("transition-all w-full px-4 py-2 flex justify-start items-center gap-2 text-xs font-semibold",
+          className={clsx("transition-all w-full px-4 py-2 flex justify-start items-center gap-2 text-sm font-semibold",
             "rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-600")}
         >
           <LogoutIcon className="w-4 h-4" />
