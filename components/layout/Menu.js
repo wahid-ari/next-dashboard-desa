@@ -1,4 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
+import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 
@@ -35,13 +36,13 @@ export default function Akun({ className }) {
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <button
+                    <Link href="/settings"
                       className={`${active ? 'bg-gray-100 text-blue-600 dark:text-sky-500 dark:bg-neutral-900 transition-all'
                         : 'text-gray-500 dark:text-neutral-300'
                         } flex w-full rounded px-2 py-1.5 text-sm`}
                     >
                       Setting
-                    </button>
+                    </Link>
                   )}
                 </Menu.Item>
               </div>
