@@ -4,20 +4,23 @@ import { GlobalProvider } from "@utils/GlobalContext";
 import "../styles/globals.css";
 // import { useRouter } from "next/router";
 import { Inter } from '@next/font/google';
+import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 
 function MyApp({ Component, pageProps }) {
   // const router = useRouter();
   return (
-    <GlobalProvider>
-      {/* <AxiosConfigProvider> */}
-      <main className={inter.className}>
-        <Toaster />
-        <Component {...pageProps} />
-      </main>
-      {/* </AxiosConfigProvider> */}
-    </GlobalProvider>
+    <ThemeProvider attribute="class">
+      <GlobalProvider>
+        {/* <AxiosConfigProvider> */}
+        <main className={inter.className}>
+          <Toaster />
+          <Component {...pageProps} />
+        </main>
+        {/* </AxiosConfigProvider> */}
+      </GlobalProvider>
+    </ThemeProvider>
   );
 }
 
