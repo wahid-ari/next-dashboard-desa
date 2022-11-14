@@ -1,12 +1,21 @@
-import { GlobalContext } from "@utils/GlobalContext";
-import { useContext } from "react";
+import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useTheme } from 'next-themes'
 
 export default function Shimer({ className }) {
-  const { darkMode } = useContext(GlobalContext);
+  const [mounted, setMounted] = useState(false)
+  const { theme } = useTheme()
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  return darkMode ? (
+  if (!mounted) {
+    return null
+  }
+
+  return theme == 'dark' ? (
     <Skeleton
       className={`${className ? className + " " : ""}h-10 mb-2`}
       baseColor="#262626"
@@ -16,7 +25,7 @@ export default function Shimer({ className }) {
     <Skeleton
       className={`${
         className ? className + " " : ""
-      }h-10 mb-2 dark:bg-red-500 dark:text-red-400`}
+      }h-10 mb-2`}
     />
   );
 }
