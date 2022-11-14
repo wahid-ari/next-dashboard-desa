@@ -1,14 +1,15 @@
-import { useContext } from "react";
-import { GlobalContext } from "@utils/GlobalContext";
 import Layout from "@components/layout/Layout";
 import Text from "@components/systems/Text";
 import Title from "@components/systems/Title";
+import { useTheme } from 'next-themes'
 
 export default function Settings() {
-  const { darkMode, setDarkMode } = useContext(GlobalContext);
+  const { theme, setTheme } = useTheme()
 
   const handleDarkMode = () => {
-    setDarkMode(!darkMode);
+    if (theme == 'light') {
+      setTheme('dark')
+    } else setTheme('light')
   };
 
   return (

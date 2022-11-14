@@ -1,11 +1,10 @@
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useContext, useEffect } from "react";
 import { GlobalContext } from "@utils/GlobalContext";
 import {
   XIcon,
   LogoutIcon,
   ViewGridIcon,
-  ArrowSmRightIcon,
   CogIcon,
   CashIcon,
   SunIcon,
@@ -15,11 +14,13 @@ import {
 import NavLink from "@components/systems/NavLink";
 import NavAccordion from "@components/systems/NavAccordion";
 import clsx from "clsx";
+import { useTheme } from 'next-themes'
 
 export default function Sidebar() {
   const router = useRouter();
   const { showNav, setShowNav } = useContext(GlobalContext);
-  const { darkMode, setDarkMode } = useContext(GlobalContext);
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   const hideMenu = () => {
     setShowNav(false);
@@ -28,6 +29,14 @@ export default function Sidebar() {
   useEffect(() => {
     setShowNav(false);
   }, [router.pathname, setShowNav]);
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div
@@ -43,12 +52,12 @@ export default function Sidebar() {
           Desa Digital
         </p>
         <div className="cursor-pointer pt-1">
-          {darkMode ?
-            <button onClick={() => setDarkMode(!darkMode)} aria-label="Light">
+          {theme == 'dark' ?
+            <button onClick={() => setTheme('light')} aria-label="Light">
               <SunIcon className="h-5 w-5 text-neutral-400 hover:text-neutral-200 transition-all" />
             </button>
             :
-            <button onClick={() => setDarkMode(!darkMode)} aria-label="Dark">
+            <button onClick={() => setTheme('dark')} aria-label="Dark">
               <MoonIcon className="h-5 w-5 text-gray-500 hover:text-gray-700 transition-all" />
             </button>
           }
