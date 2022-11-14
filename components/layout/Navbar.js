@@ -1,25 +1,13 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import Link from "next/link";
 import { MenuIcon } from "@heroicons/react/solid";
 import { GlobalContext } from "@utils/GlobalContext";
-import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import Menu from './Menu'
 import clsx from "clsx";
-import { useTheme } from 'next-themes'
+import ThemeChanger from './ThemeChanger';
 
 export default function Navbar() {
   const { setShowNav } = useContext(GlobalContext);
-
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
 
   const showMenu = () => {
     setShowNav(true);
@@ -41,15 +29,7 @@ export default function Navbar() {
       <div className="flex items-center gap-3">
 
         <div className="cursor-pointer pt-1">
-          {theme == 'dark' ?
-            <button onClick={() => setTheme('light')} aria-label="Light">
-              <SunIcon className="h-5 w-5 text-neutral-400 hover:text-neutral-200 transition-all" />
-            </button>
-            :
-            <button onClick={() => setTheme('dark')} aria-label="Dark">
-              <MoonIcon className="h-5 w-5 text-gray-500 hover:text-gray-700 transition-all" />
-            </button>
-          }
+          <ThemeChanger />
         </div>
 
         <Menu className="lg:hidden" />
