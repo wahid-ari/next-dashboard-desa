@@ -18,7 +18,7 @@ export default function Table({
       className={`${className ? className + " " : ""
         }w-full lg:max-w-[calc(100vw_-_17rem)] rounded border dark:border-neutral-800 shadow-sm`}
     >
-      <div className="w-full lg:max-w-[calc(100vw_-_17rem)] overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700">
+      <div className="w-full lg:max-w-[calc(100vw_-_17rem)] overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800">
         <table className="w-full whitespace-nowrap table-auto text-neutral-700 dark:text-neutral-400">
           <thead>
             <tr className="border-b text-sm dark:border-neutral-800 font-bold bg-gray-50 dark:bg-[#202020] whitespace-nowrap">

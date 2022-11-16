@@ -31,7 +31,7 @@ export default function Layout({ children, title, description }) {
           {/* Show on Mobile */}
           <div className={clsx("lg:hidden flex gap-x-4 items-center justify-between border-b dark:border-neutral-800 pl-1 pr-3 sm:px-2 py-3",
             "bg-[#F8F9FD]/95 dark:bg-neutral-900/90 overflow-x-auto",
-            "scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700")}>
+            "scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800")}>
             <Breadcrumb />
           </div>
 

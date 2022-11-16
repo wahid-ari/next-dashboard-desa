@@ -51,7 +51,7 @@ export default function MultipleSelect({
           show
             ? "max-h-64 border dark:border-neutral-800"
             : "max-h-0 border-transparent"
-        } z-50 transition-all bg-white dark:bg-neutral-900 shadow-sm absolute w-full rounded-md overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-700`}
+        } z-50 transition-all bg-white dark:bg-neutral-900 shadow-sm absolute w-full rounded-md overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800`}
       >
         {children}
       </div>
