@@ -14,7 +14,7 @@ export default function Wrapper({
 }) {
   return (
     <section id={id} className="pt-8">
-      <Heading h3 className="group transition-all duration-500">
+      <Heading className="group transition-all duration-500">
         <span className="transition-all duration-500 text-neutral-500 group-hover:text-black dark:group-hover:text-white">
           #
         </span>{" "}
@@ -23,7 +23,7 @@ export default function Wrapper({
       {noWrap ? (
         <div className="mb-2">{children}</div>
       ) : (
-        <div className="relative p-8 mb-2 rounded-md border dark:border-neutral-800 bg-white dark:bg-[#1F1F1F]">
+        <div className="relative p-8 mb-2 rounded-md border dark:border-neutral-800">
           {children}
         </div>
       )}

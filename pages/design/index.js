@@ -543,7 +543,7 @@ export default function Example() {
         <Checkbox.disabled name="Disabled Checked Checkbox" defaultChecked />
       </Wrapper>
 
-      <Wrapper id="container" name="Container" props={["small"]} noWrap>
+      <Wrapper id="container" name="Container" props={["small"]}>
         <Container>
           <Text>Content</Text>
         </Container>
@@ -732,25 +732,21 @@ export default function Example() {
       </Wrapper>
 
       <Wrapper id="shimer" name="Shimer" noChildren noProps>
-        <Card clasName="!bg-white dark:!bg-neutral-900">
-          <Shimer className="max-w-[5rem]" />
-          <Shimer className="max-w-[16rem]" />
-          <Shimer className="max-w-[16rem]" />
-          <Shimer className="max-w-[16rem]" />
-          <Shimer className="max-w-[16rem]" />
-        </Card>
+        <Shimer className="max-w-[5rem]" />
+        <Shimer className="max-w-[10rem]" />
+        <Shimer className="max-w-[15rem]" />
       </Wrapper>
 
-      <Wrapper id="tabs" name="Tabs" props={["items"]} noWrap>
-        <Tabs items={["Tab A", "Tab B", "Tab C"]} className="mt-4">
+      <Wrapper id="tabs" name="Tabs" props={["items"]}>
+        <Tabs items={["Tab A", "Tab B", "Tab C"]}>
           <Tabs.panel>
-            <Heading>Tab Content A</Heading>
+            <Heading className="mb-0">Tab Content A</Heading>
           </Tabs.panel>
           <Tabs.panel>
-            <Heading>Tab Content B</Heading>
+            <Heading className="mb-0">Tab Content B</Heading>
           </Tabs.panel>
           <Tabs.panel>
-            <Heading>Tab Content C</Heading>
+            <Heading className="mb-0">Tab Content C</Heading>
           </Tabs.panel>
         </Tabs>
       </Wrapper>
@@ -759,11 +755,10 @@ export default function Example() {
         id="tabitem"
         name="Tabs.panel"
         noProps
-        noWrap
       >
-        <Tabs items={["Tab"]} className="mt-4">
+        <Tabs items={["Tab"]}>
           <Tabs.panel>
-            <Heading>Tabs Panel</Heading>
+            <Heading className="mb-0">Tabs Panel</Heading>
           </Tabs.panel>
         </Tabs>
       </Wrapper>
@@ -858,7 +853,7 @@ export default function Example() {
         name="Card"
         props
       >
-        <Card clasName="!bg-white dark:!bg-neutral-900">
+        <Card>
           <Text>Card Content</Text>
         </Card>
       </Wrapper>
