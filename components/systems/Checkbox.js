@@ -21,7 +21,7 @@ export default function Checkbox({
           type="checkbox"
           className="absolute opacity-0 cursor-pointer w-0 h-0 peer"
         />
-        <span className="mt-0.5 transition-all absolute -top-0.5 left-0 h-4 w-4 peer-checked:bg-blue-800 dark:peer-checked:bg-sky-500 border border-neutral-300 dark:border-neutral-800 peer-checked:border-blue-800 dark:peer-checked:border-sky-500 group-hover:peer-checked:border-neutral-300 dark:group-hover:peer-checked:border-neutral-800 rounded group-hover:border-blue-800 dark:group-hover:border-sky-500"></span>
+        <span className="mt-0.5 transition-all absolute -top-0.5 left-0 h-4 w-4 peer-checked:bg-blue-800 dark:peer-checked:bg-sky-500 border border-neutral-300 dark:border-neutral-800 peer-checked:border-blue-800 dark:peer-checked:border-sky-500 group-hover:peer-checked:border-neutral-300 dark:group-hover:peer-checked:border-neutral-800 rounded group-hover:border-blue-800 dark:group-hover:border-sky-500 peer-focus-visible:ring-2 peer-focus-visible:ring-sky-500"></span>
         <CheckIcon className="mt-[0.05rem] h-3.5 w-3.5 text-white absolute top-[0.05rem] left-[0.05rem] hidden peer-checked:block" />
       </label>
     </div>

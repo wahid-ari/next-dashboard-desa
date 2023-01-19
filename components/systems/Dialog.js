@@ -75,11 +75,11 @@ export default function Dialog({ open, setOpen, title, children, isDanger, onClo
                 Cancel
               </Button.secondary>
               {isDanger ?
-                <Button.danger className="sm:w-auto w-full focus:ring-2 focus:ring-red-500" onClick={onConfirm} >
+                <Button.danger className="sm:w-auto w-full" onClick={onConfirm} >
                   Delete
                 </Button.danger>
                 :
-                <Button className="sm:w-auto w-full focus:ring-2 focus:bg-red-600" onClick={onConfirm} >
+                <Button className="sm:w-auto w-full" onClick={onConfirm} >
                   Confirm
                 </Button>
               }
