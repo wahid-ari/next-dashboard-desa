@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 export default function NavLink({ className, href, icon, isHome, children }) {
   const router = useRouter();
   return (
-    <Link passHref href={href} className={`${className} transition-all w-full px-3 py-2 mb-1 flex justify-start items-center gap-2 rounded text-sm ${router.pathname.includes(href) && !isHome
+    <Link passHref href={href} className={`${className} transition-all w-full px-3 py-2 flex justify-start items-center gap-2 rounded text-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500
+    ${router.pathname.includes(href) && !isHome
       ? "bg-gray-100 dark:bg-neutral-800 font-medium text-blue-600 dark:text-sky-500"
       : router.pathname === href && isHome
         ? "bg-gray-100 dark:bg-neutral-800 font-medium text-blue-600 dark:text-sky-500 dark:hover:text-sky-500"

@@ -44,7 +44,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className={clsx("pt-4 px-4 border-t dark:border-neutral-800 flex flex-nowrap flex-col flex-grow overflow-auto",
+      <div className={clsx("pt-4 px-4 border-t dark:border-neutral-800 flex gap-1 flex-nowrap flex-col flex-grow overflow-auto",
         "scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800"
       )}>
 
@@ -70,7 +70,7 @@ export default function Sidebar() {
           </NavLink>
         </NavAccordion>
 
-        <NavLink href="/settings" icon={<CogIcon className="w-4 h-4" />} className="mt-3">
+        <NavLink href="/settings" icon={<CogIcon className="w-4 h-4" />} className="mt-1">
           Settings
         </NavLink>
 
@@ -81,7 +81,8 @@ export default function Sidebar() {
         <button
           onClick={() => router.push('/login')}
           className={clsx("transition-all w-full px-4 py-2 flex justify-start items-center gap-2 text-sm font-semibold",
-            "rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-600")}
+            "rounded hover:bg-red-100 dark:hover:bg-neutral-800 text-red-600", 
+            "focus-visible:outline-none focus-visible:ring focus-visible:ring-red-500")}
         >
           <LogoutIcon className="w-4 h-4" />
           Log out
