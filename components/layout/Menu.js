@@ -8,7 +8,7 @@ export default function Akun({ className }) {
     <Menu as="div" className={`relative ${className && className}`}>
       {({ open }) => (
         <>
-          <Menu.Button className={clsx("inline-flex items-center w-full justify-center rounded-md pr-1.5 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500",
+          <Menu.Button className={clsx("inline-flex items-center w-full justify-center rounded pr-1.5 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500",
             "text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-200 focus:outline-none")}>
             Admin
             <ChevronDownIcon className={`${open ? 'rotate-180' : 'rotate-0'} ml-1 h-5 w-4 pb-0.5 transition-all duration-200`} aria-hidden="true" />

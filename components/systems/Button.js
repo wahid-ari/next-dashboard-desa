@@ -14,9 +14,9 @@ export default function Button({
       onClick={onClick}
       value={value}
       className={`${className ? className + " " : ""
-        }text-sm transition-all outline-none px-3 py-1.5 rounded font-medium bg-blue-700 dark:bg-sky-600 focus:ring-2 focus:ring-sky-400 ${disabled
+        }text-sm transition-all outline-none px-3 py-1.5 rounded font-medium bg-sky-600 dark:bg-sky-600 focus:ring-2 focus:ring-sky-400 ${disabled
           ? "cursor-not-allowed"
-          : "hover:bg-blue-800 dark:hover:bg-sky-700"
+          : "hover:bg-sky-700 dark:hover:bg-sky-700"
         } text-white`}
     >
       {children}

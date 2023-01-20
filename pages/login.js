@@ -62,7 +62,7 @@ export default function Login() {
   }
 
   return (
-    <div className="text-sm font-medium">
+    <div className="text-sm font-medium dark:bg-white">
 
       <Head>
         <title>Login Admin | Desa Digital</title>
@@ -93,7 +93,7 @@ export default function Login() {
                 placeholder="Username"
                 value={form.username}
                 onChange={handleChange}
-                className="text-sm transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-blue-800 border-gray-300 focus:border-blue-800 outline-none"
+                className="dark:text-neutral-800 text-sm transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-sky-500 border-gray-300 focus:border-sky-500 outline-none"
                 autoComplete="off"
                 required
               />
@@ -109,13 +109,13 @@ export default function Login() {
                   placeholder="Password"
                   value={form.password}
                   onChange={handleChange}
-                  className="text-sm transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-blue-800 border-gray-300 focus:border-blue-800 outline-none"
+                  className="dark:text-neutral-800 text-sm transition-all font-medium bg-white w-full px-4 py-[0.6rem] rounded-md mt-2 border focus:ring-1 ring-gray-300 focus:ring-sky-500 border-gray-300 focus:border-sky-500 outline-none"
                   autoComplete="off"
                   required
                 />
                 <button
                   onClick={() => setShowPassword(!showPassword)}
-                  className="z-10 mr-0.5 p-1.5 mt-2 rounded-md absolute right-0 backdrop-blur-lg"
+                  className="z-10 mr-0.5 p-1.5 mt-2 rounded-md absolute right-0 backdrop-blur-lg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-500"
                 >
                   {showPassword ?
                     <EyeIcon className="w-5 h-5 text-gray-600" />
