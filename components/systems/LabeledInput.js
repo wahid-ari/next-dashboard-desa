@@ -1,20 +1,7 @@
-export default function LabeledInput({
-  id,
-  className,
-  label,
-  type,
-  name,
-  placeholder,
-  value,
-  onChange,
-  ...rest
-}) {
+export default function LabeledInput({ id, className, label, type, name, placeholder, value, onChange, ...rest }) {
   return (
-    <div className="mb-4">
-      <label
-        className="text-sm block text-gray-800 dark:text-neutral-300"
-        htmlFor={name}
-      >
+    <div className='mb-4'>
+      <label className='block text-sm text-gray-800 dark:text-neutral-300' htmlFor={name}>
         {label}
       </label>
       <input
@@ -26,30 +13,19 @@ export default function LabeledInput({
         value={value}
         onChange={onChange}
         className={`${
-          className ? className + " " : ""
-        }text-sm transition-all font-medium dark:text-neutral-100 bg-white dark:bg-neutral-900 w-full px-4 py-[0.6rem] rounded-md mt-2 border border-gray-300 dark:border-neutral-800 focus:ring-1 focus:ring-blue-500 dark:focus:ring-sky-500 focus:border-blue-500 dark:focus:border-sky-500 outline-none`}
-        autoComplete="off"
+          className ? className + ' ' : ''
+        }text-sm mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-[0.6rem] font-medium outline-none transition-all focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-sky-500 dark:focus:ring-sky-500`}
+        autoComplete='off'
         required
       />
     </div>
   );
 }
 
-LabeledInput.disabled = ({
-  className,
-  label,
-  type,
-  name,
-  placeholder,
-  defaultValue,
-  ...rest
-}) => {
+LabeledInput.disabled = ({ className, label, type, name, placeholder, defaultValue, ...rest }) => {
   return (
-    <div className="mb-4">
-      <label
-        className="text-sm block text-gray-500 dark:text-neutral-300"
-        htmlFor={name}
-      >
+    <div className='mb-4'>
+      <label className='block text-sm text-gray-500 dark:text-neutral-300' htmlFor={name}>
         {label}
       </label>
       <input
@@ -59,8 +35,8 @@ LabeledInput.disabled = ({
         placeholder={placeholder}
         defaultValue={defaultValue}
         className={`${
-          className ? className + " " : ""
-        }text-sm transition-all font-medium dark:text-neutral-500 bg-gray-100 dark:bg-neutral-800 w-full px-4 py-[0.6rem] rounded-md mt-2 border border-gray-300 dark:border-neutral-800 outline-none cursor-not-allowed`}
+          className ? className + ' ' : ''
+        }text-sm mt-2 w-full cursor-not-allowed rounded-md border border-gray-300 bg-gray-100 px-4 py-[0.6rem] font-medium outline-none transition-all dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-500`}
         disabled
       />
     </div>

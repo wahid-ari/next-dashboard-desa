@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function useModal() {
   const [modal, setModal] = useState({
     show: false,
-    title: "",
-    desc: "",
-    content: "",
+    title: '',
+    desc: '',
+    content: '',
   });
   const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     if (isHidden) {
-      document.body.classList.remove("overflow-y-hidden");
+      document.body.classList.remove('overflow-y-hidden');
     } else {
-      document.body.classList.add("overflow-y-hidden");
+      document.body.classList.add('overflow-y-hidden');
     }
     return () => {
-      document.body.classList.remove("overflow-y-hidden");
+      document.body.classList.remove('overflow-y-hidden');
     };
   }, [isHidden]);
 
@@ -27,7 +27,7 @@ export default function useModal() {
     }, 150);
   };
 
-  const revealModal = ({ title = "", desc = "", content = "" }) => {
+  const revealModal = ({ title = '', desc = '', content = '' }) => {
     setIsHidden(false);
     setTimeout(() => {
       setModal({ show: true, title, desc, content });
