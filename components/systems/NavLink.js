@@ -12,7 +12,7 @@ export default function NavLink({ className, href, icon, isHome, children }) {
         ? 'bg-gray-100 font-medium text-blue-600 dark:bg-neutral-800 dark:text-sky-500'
         : router.pathname === href && isHome
         ? 'bg-gray-100 font-medium text-blue-600 dark:bg-neutral-800 dark:text-sky-500 dark:hover:text-sky-500'
-        : 'text-gray-500 dark:text-neutral-400 dark:hover:text-sky-500'
+        : 'text-gray-700 dark:text-neutral-300 dark:hover:text-sky-500'
     } hover:bg-gray-100 hover:text-blue-600 dark:hover:bg-neutral-800`}
     >
       {icon}

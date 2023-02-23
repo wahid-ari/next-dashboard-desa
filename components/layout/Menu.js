@@ -11,7 +11,7 @@ export default function Akun({ className }) {
           <Menu.Button
             className={clsx(
               'inline-flex w-full items-center justify-center rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500',
-              'text-gray-500 hover:text-gray-700 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200'
+              'text-gray-700 hover:text-gray-900 focus:outline-none dark:text-neutral-300 dark:hover:text-neutral-100'
             )}
           >
             Admin
@@ -36,7 +36,7 @@ export default function Akun({ className }) {
                       className={`${
                         active
                           ? 'bg-gray-100 text-blue-600 transition-all dark:bg-neutral-900 dark:text-sky-500'
-                          : 'text-gray-500 dark:text-neutral-300'
+                          : 'text-gray-700 dark:text-neutral-300'
                       } mb-1 flex w-full rounded px-2 py-1.5 text-sm`}
                     >
                       Edit
@@ -50,7 +50,7 @@ export default function Akun({ className }) {
                       className={`${
                         active
                           ? 'bg-gray-100 text-blue-600 transition-all dark:bg-neutral-900 dark:text-sky-500'
-                          : 'text-gray-500 dark:text-neutral-300'
+                          : 'text-gray-700 dark:text-neutral-300'
                       } flex w-full rounded px-2 py-1.5 text-sm`}
                     >
                       Setting

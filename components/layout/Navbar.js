@@ -24,7 +24,7 @@ export default function Navbar() {
     >
       <div className='flex gap-x-3'>
         <button
-          className='rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500'
+          className='-ml-0.5 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500'
           id='menu'
           aria-label='Menu'
         >
