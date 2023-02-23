@@ -20,7 +20,7 @@ export default function Layout({ children, title, description }) {
       </Head>
 
       <div
-        className='font-inter min-h-screen w-screen bg-[#F8F9FD] text-sm dark:bg-neutral-900 lg:grid'
+        className='font-inter min-h-screen w-full bg-[#F8F9FD] text-sm dark:bg-neutral-900 lg:grid'
         style={{ gridTemplateColumns: 'auto 1fr' }}
       >
         <Sidebar />
@@ -31,7 +31,7 @@ export default function Layout({ children, title, description }) {
           {/* Show on Mobile */}
           <div
             className={clsx(
-              'flex items-center justify-between gap-x-4 border-b px-2 py-3 dark:border-neutral-800 sm:px-3 lg:hidden',
+              'flex items-center justify-between gap-x-4 border-b px-4 py-3 dark:border-neutral-800 lg:hidden',
               'overflow-x-auto bg-[#F8F9FD]/95 dark:bg-neutral-900/90',
               'scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 dark:scrollbar-thumb-neutral-800'
             )}
@@ -42,15 +42,17 @@ export default function Layout({ children, title, description }) {
           {/* Show on Desktop */}
           <div
             className={clsx(
-              'hidden items-center justify-between gap-x-4 border-b px-2 py-3 dark:border-neutral-800 sm:px-3 lg:flex',
-              'sticky top-0 z-40 bg-[#F8F9FD]/95 supports-[backdrop-filter]:backdrop-blur-sm dark:bg-neutral-900/90'
+              'hidden items-center justify-between gap-x-4 border-b py-3 dark:border-neutral-800 px-4 lg:flex',
+              'sticky top-0 z-40',
+              'bg-white/50 dark:bg-neutral-900/30',
+              'backdrop-blur-md backdrop-filter'
             )}
           >
             <Breadcrumb />
             <Menu />
           </div>
 
-          <div className='px-4 py-4 sm:px-5'>{children}</div>
+          <div className='py-5 px-5'>{children}</div>
         </div>
       </div>
     </>
