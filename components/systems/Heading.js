@@ -1,11 +1,11 @@
-export default function Heading({ className, h1, h2, h3, children, ...rest }) {
+export default function Heading({ className, h1, h2, h3, children, ...props }) {
   if (h1) {
     return (
       <h1
         className={`${
           className ? className + ' ' : ''
         }text-neutral-800 mb-4 text-3xl font-medium dark:text-neutral-100`}
-        {...rest}
+        {...props}
       >
         {children}
       </h1>
@@ -16,7 +16,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
         className={`${
           className ? className + ' ' : ''
         }text-neutral-800 mb-4 text-2xl font-medium dark:text-neutral-100`}
-        {...rest}
+        {...props}
       >
         {children}
       </h2>
@@ -25,7 +25,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
     return (
       <h3
         className={`${className ? className + ' ' : ''}text-neutral-800 mb-4 text-xl font-medium dark:text-neutral-100`}
-        {...rest}
+        {...props}
       >
         {children}
       </h3>
@@ -34,7 +34,7 @@ export default function Heading({ className, h1, h2, h3, children, ...rest }) {
   return (
     <h4
       className={`${className ? className + ' ' : ''}text-neutral-800 mb-4 text-lg font-medium dark:text-neutral-100`}
-      {...rest}
+      {...props}
     >
       {children}
     </h4>

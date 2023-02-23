@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
 
-export default function Dropdown({ id, name, label, show, value, onClick, onBlur, children, ...rest }) {
+export default function Dropdown({ id, name, label, show, value, onClick, onBlur, children, ...props }) {
   const buttonRef = useRef(null);
   const ref = useRef(null);
   const setBlur = (e) => {
@@ -25,7 +25,7 @@ export default function Dropdown({ id, name, label, show, value, onClick, onBlur
         <label className='block text-sm text-gray-800 dark:text-neutral-300'>{label}</label>
         <button
           ref={buttonRef}
-          {...rest}
+          {...props}
           type='button'
           id={id}
           name={name}
@@ -50,13 +50,13 @@ export default function Dropdown({ id, name, label, show, value, onClick, onBlur
   );
 }
 
-Dropdown.item = ({ children, ...rest }) => {
+Dropdown.item = ({ children, ...props }) => {
   return (
     <div className='flex'>
       <button
         type='button'
         className='flex flex-grow cursor-pointer items-center gap-2 border-b px-4 py-[0.6rem] text-sm outline-none hover:bg-gray-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-800'
-        {...rest}
+        {...props}
       >
         {children}
       </button>

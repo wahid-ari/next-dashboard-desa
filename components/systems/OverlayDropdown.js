@@ -10,13 +10,13 @@ export default function OverlayDropdown({ show, children }) {
   );
 }
 
-OverlayDropdown.item = ({ children, ...rest }) => {
+OverlayDropdown.item = ({ children, ...props }) => {
   return (
     <div className='flex'>
       <button
         type='button'
         className='flex flex-grow cursor-pointer items-center gap-2 border-b px-4 py-[0.6rem] text-sm outline-none hover:bg-gray-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-800'
-        {...rest}
+        {...props}
       >
         {children}
       </button>

@@ -2,7 +2,7 @@ import { PlusIcon } from '@heroicons/react/solid';
 import { useRef } from 'react';
 import Button from './Button';
 
-export default function FileInput({ id, className, label, type = 'file', name, value, onChange, ...rest }) {
+export default function FileInput({ id, className, label, type = 'file', name, value, onChange, ...props }) {
   const ref = useRef();
 
   const handleClick = () => {
@@ -25,7 +25,7 @@ export default function FileInput({ id, className, label, type = 'file', name, v
       </Button.secondary>
       <input
         ref={ref}
-        {...rest}
+        {...props}
         id={id}
         type={type}
         name={name}

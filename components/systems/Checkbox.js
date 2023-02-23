@@ -1,12 +1,12 @@
 import { CheckIcon } from '@heroicons/react/outline';
 
-export default function Checkbox({ label, name, value, onChange, defaultChecked, ...rest }) {
+export default function Checkbox({ label, name, value, onChange, defaultChecked, ...props }) {
   return (
     <div className='mb-3 text-sm'>
       <label className='group relative cursor-pointer select-none pl-6 pb-0.5 text-gray-800 dark:text-neutral-300'>
         {label}
         <input
-          {...rest}
+          {...props}
           name={name}
           value={value}
           onChange={onChange}
@@ -21,12 +21,12 @@ export default function Checkbox({ label, name, value, onChange, defaultChecked,
   );
 }
 
-Checkbox.disabled = ({ name, defaultChecked, ...rest }) => {
+Checkbox.disabled = ({ name, defaultChecked, ...props }) => {
   return (
     <div className='mb-3 cursor-not-allowed text-sm'>
       <label className='pointer-events-none relative select-none pl-6 pb-0.5 text-gray-800 dark:text-neutral-300'>
         {name}
-        <input {...rest} defaultChecked={defaultChecked} type='checkbox' className='peer absolute h-0 w-0 opacity-0' />
+        <input {...props} defaultChecked={defaultChecked} type='checkbox' className='peer absolute h-0 w-0 opacity-0' />
         <span className='absolute -top-0.5 left-0 mt-0.5 h-4 w-4 rounded border border-neutral-300 transition-all peer-checked:border-blue-800 peer-checked:bg-blue-800 dark:border-neutral-800 dark:peer-checked:border-sky-500 dark:peer-checked:bg-sky-500'></span>
         <CheckIcon className='absolute top-[0.05rem] left-[0.05rem] mt-[0.05rem] hidden h-3.5 w-3.5 text-white peer-checked:block' />
       </label>

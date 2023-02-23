@@ -1,15 +1,15 @@
-export default function Text({ className, children, ...rest }) {
+export default function Text({ className, children, ...props }) {
   return (
-    <p {...rest} className={`${className ? className + ' ' : ''}text-sm text-neutral-700 dark:text-neutral-200`}>
+    <p {...props} className={`${className ? className + ' ' : ''}text-sm text-neutral-700 dark:text-neutral-200`}>
       {children}
     </p>
   );
 }
 
-Text.light = ({ className, children, ...rest }) => {
+Text.light = ({ className, children, ...props }) => {
   return (
     <p
-      {...rest}
+      {...props}
       className={`${className ? className + ' ' : ''}font-light text-sm text-neutral-700 dark:text-neutral-200`}
     >
       {children}
@@ -17,10 +17,10 @@ Text.light = ({ className, children, ...rest }) => {
   );
 };
 
-Text.medium = ({ className, children, ...rest }) => {
+Text.medium = ({ className, children, ...props }) => {
   return (
     <p
-      {...rest}
+      {...props}
       className={`${className ? className + ' ' : ''}font-medium text-sm text-neutral-700 dark:text-neutral-200`}
     >
       {children}
@@ -28,10 +28,10 @@ Text.medium = ({ className, children, ...rest }) => {
   );
 };
 
-Text.semibold = ({ className, children, ...rest }) => {
+Text.semibold = ({ className, children, ...props }) => {
   return (
     <p
-      {...rest}
+      {...props}
       className={`${className ? className + ' ' : ''}font-semibold text-sm text-neutral-700 dark:text-neutral-200`}
     >
       {children}
@@ -39,10 +39,10 @@ Text.semibold = ({ className, children, ...rest }) => {
   );
 };
 
-Text.bold = ({ className, children, ...rest }) => {
+Text.bold = ({ className, children, ...props }) => {
   return (
     <p
-      {...rest}
+      {...props}
       className={`${className ? className + ' ' : ''}font-bold text-sm text-neutral-700 dark:text-neutral-200`}
     >
       {children}
@@ -50,10 +50,10 @@ Text.bold = ({ className, children, ...rest }) => {
   );
 };
 
-Text.extrabold = ({ className, children, ...rest }) => {
+Text.extrabold = ({ className, children, ...props }) => {
   return (
     <p
-      {...rest}
+      {...props}
       className={`${className ? className + ' ' : ''}font-extrabold text-sm text-neutral-700 dark:text-neutral-200`}
     >
       {children}

@@ -46,12 +46,12 @@ export default function MultipleSelect({ label, show, value, onClick, onBlur, ch
   );
 }
 
-MultipleSelect.item = ({ children, ...rest }) => {
+MultipleSelect.item = ({ children, ...props }) => {
   return (
     <div className='flex'>
       <button
         className='flex flex-grow cursor-pointer items-center gap-2 border-b px-4 py-[0.6rem] outline-none hover:bg-gray-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-800'
-        {...rest}
+        {...props}
       >
         {children}
       </button>

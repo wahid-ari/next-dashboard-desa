@@ -1,4 +1,4 @@
-export default function Select({ label, id, name, className, defaultValue, onChange, children, ...rest }) {
+export default function Select({ label, id, name, className, defaultValue, onChange, children, ...props }) {
   return (
     <div className=''>
       {label && (
@@ -7,7 +7,7 @@ export default function Select({ label, id, name, className, defaultValue, onCha
         </label>
       )}
       <select
-        {...rest}
+        {...props}
         id={id}
         name={name}
         defaultValue={defaultValue}
@@ -26,9 +26,9 @@ export default function Select({ label, id, name, className, defaultValue, onCha
   );
 }
 
-Select.option = ({ value, children, ...rest }) => {
+Select.option = ({ value, children, ...props }) => {
   return (
-    <option value={value} {...rest}>
+    <option value={value} {...props}>
       {children}
     </option>
   );

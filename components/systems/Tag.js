@@ -1,9 +1,9 @@
 import { XIcon } from '@heroicons/react/solid';
 
-export default function Tag({ className, noX, isLarge, children, ...rest }) {
+export default function Tag({ className, noX, isLarge, children, ...props }) {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-blue-100 font-semibold text-sky-800 outline-none dark:bg-sky-600 dark:text-sky-50 ${
@@ -16,10 +16,10 @@ export default function Tag({ className, noX, isLarge, children, ...rest }) {
   );
 }
 
-Tag.dark = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.dark = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-gray-100 font-semibold text-gray-800 outline-none dark:bg-gray-900 dark:text-gray-200 ${
@@ -32,10 +32,10 @@ Tag.dark = ({ className, noX, isLarge, children, ...rest }) => {
   );
 };
 
-Tag.red = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.red = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-red-100 font-semibold text-red-800 outline-none dark:bg-red-900 dark:text-red-200 ${
@@ -48,10 +48,10 @@ Tag.red = ({ className, noX, isLarge, children, ...rest }) => {
   );
 };
 
-Tag.green = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.green = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-green-100 font-semibold text-green-800 outline-none dark:bg-green-900 dark:text-green-200 ${
@@ -64,10 +64,10 @@ Tag.green = ({ className, noX, isLarge, children, ...rest }) => {
   );
 };
 
-Tag.yellow = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.yellow = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-yellow-100 font-semibold text-yellow-800 outline-none dark:bg-yellow-900 dark:text-yellow-200 ${
@@ -80,10 +80,10 @@ Tag.yellow = ({ className, noX, isLarge, children, ...rest }) => {
   );
 };
 
-Tag.indigo = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.indigo = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-indigo-100 font-semibold text-indigo-800 outline-none dark:bg-indigo-900 dark:text-indigo-200 ${
@@ -96,10 +96,10 @@ Tag.indigo = ({ className, noX, isLarge, children, ...rest }) => {
   );
 };
 
-Tag.purple = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.purple = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-purple-100 font-semibold text-purple-800 outline-none dark:bg-purple-900 dark:text-purple-200 ${
@@ -112,10 +112,10 @@ Tag.purple = ({ className, noX, isLarge, children, ...rest }) => {
   );
 };
 
-Tag.pink = ({ className, noX, isLarge, children, ...rest }) => {
+Tag.pink = ({ className, noX, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }flex items-center justify-between gap-2 whitespace-nowrap bg-pink-100 font-semibold text-pink-800 outline-none dark:bg-pink-900 dark:text-pink-200 ${

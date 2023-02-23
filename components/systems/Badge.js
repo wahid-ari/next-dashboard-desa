@@ -1,7 +1,7 @@
-export default function Badge({ className, isLarge, children, ...rest }) {
+export default function Badge({ className, isLarge, children, ...props }) {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-blue-100 text-sky-600 dark:bg-sky-600 dark:bg-opacity-10 ${
@@ -13,10 +13,10 @@ export default function Badge({ className, isLarge, children, ...rest }) {
   );
 }
 
-Badge.dark = ({ className, isLarge, children, ...rest }) => {
+Badge.dark = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-gray-100 text-gray-600 dark:bg-gray-600 dark:bg-opacity-10 dark:text-gray-400 ${
@@ -28,10 +28,10 @@ Badge.dark = ({ className, isLarge, children, ...rest }) => {
   );
 };
 
-Badge.red = ({ className, isLarge, children, ...rest }) => {
+Badge.red = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-red-100 text-red-600 dark:bg-red-600 dark:bg-opacity-10 ${
@@ -43,10 +43,10 @@ Badge.red = ({ className, isLarge, children, ...rest }) => {
   );
 };
 
-Badge.green = ({ className, isLarge, children, ...rest }) => {
+Badge.green = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-green-100 text-green-600 dark:bg-green-600 dark:bg-opacity-10 ${
@@ -58,10 +58,10 @@ Badge.green = ({ className, isLarge, children, ...rest }) => {
   );
 };
 
-Badge.yellow = ({ className, isLarge, children, ...rest }) => {
+Badge.yellow = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-yellow-100 text-yellow-600 dark:bg-yellow-600 dark:bg-opacity-10 ${
@@ -73,10 +73,10 @@ Badge.yellow = ({ className, isLarge, children, ...rest }) => {
   );
 };
 
-Badge.indigo = ({ className, isLarge, children, ...rest }) => {
+Badge.indigo = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-indigo-100 text-indigo-600 dark:bg-indigo-600 dark:bg-opacity-10 ${
@@ -88,10 +88,10 @@ Badge.indigo = ({ className, isLarge, children, ...rest }) => {
   );
 };
 
-Badge.purple = ({ className, isLarge, children, ...rest }) => {
+Badge.purple = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-purple-100 text-purple-600 dark:bg-purple-600 dark:bg-opacity-10 ${
@@ -103,10 +103,10 @@ Badge.purple = ({ className, isLarge, children, ...rest }) => {
   );
 };
 
-Badge.pink = ({ className, isLarge, children, ...rest }) => {
+Badge.pink = ({ className, isLarge, children, ...props }) => {
   return (
     <span
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }font-semibold whitespace-nowrap bg-pink-100 text-pink-600 dark:bg-pink-600 dark:bg-opacity-10 ${

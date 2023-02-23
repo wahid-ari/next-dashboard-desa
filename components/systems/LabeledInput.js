@@ -1,11 +1,11 @@
-export default function LabeledInput({ id, className, label, type, name, placeholder, value, onChange, ...rest }) {
+export default function LabeledInput({ id, className, label, type, name, placeholder, value, onChange, ...props }) {
   return (
     <div className='mb-4'>
       <label className='block text-sm text-gray-800 dark:text-neutral-300' htmlFor={name}>
         {label}
       </label>
       <input
-        {...rest}
+        {...props}
         id={id}
         type={type}
         name={name}
@@ -22,14 +22,14 @@ export default function LabeledInput({ id, className, label, type, name, placeho
   );
 }
 
-LabeledInput.disabled = ({ className, label, type, name, placeholder, defaultValue, ...rest }) => {
+LabeledInput.disabled = ({ className, label, type, name, placeholder, defaultValue, ...props }) => {
   return (
     <div className='mb-4'>
       <label className='block text-sm text-gray-500 dark:text-neutral-300' htmlFor={name}>
         {label}
       </label>
       <input
-        {...rest}
+        {...props}
         type={type}
         name={name}
         placeholder={placeholder}

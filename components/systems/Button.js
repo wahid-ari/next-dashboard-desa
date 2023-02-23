@@ -1,7 +1,7 @@
-export default function Button({ className, type, value, onClick, disabled, children, ...rest }) {
+export default function Button({ className, type, value, onClick, disabled, children, ...props }) {
   return (
     <button
-      {...rest}
+      {...props}
       type={type}
       onClick={onClick}
       value={value}
@@ -16,10 +16,10 @@ export default function Button({ className, type, value, onClick, disabled, chil
   );
 }
 
-Button.secondary = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.secondary = ({ className, type, value, onClick, disabled, children, ...props }) => {
   return (
     <button
-      {...rest}
+      {...props}
       type={type}
       value={value}
       onClick={onClick}
@@ -35,10 +35,10 @@ Button.secondary = ({ className, type, value, onClick, disabled, children, ...re
   );
 };
 
-Button.tertary = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.tertary = ({ className, type, value, onClick, disabled, children, ...props }) => {
   return (
     <button
-      {...rest}
+      {...props}
       type={type}
       value={value}
       onClick={onClick}
@@ -54,10 +54,10 @@ Button.tertary = ({ className, type, value, onClick, disabled, children, ...rest
   );
 };
 
-Button.success = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.success = ({ className, type, value, onClick, disabled, children, ...props }) => {
   return (
     <button
-      {...rest}
+      {...props}
       type={type}
       onClick={onClick}
       value={value}
@@ -72,10 +72,10 @@ Button.success = ({ className, type, value, onClick, disabled, children, ...rest
   );
 };
 
-Button.danger = ({ className, type, value, onClick, disabled, children, ...rest }) => {
+Button.danger = ({ className, type, value, onClick, disabled, children, ...props }) => {
   return (
     <button
-      {...rest}
+      {...props}
       type={type}
       onClick={onClick}
       value={value}

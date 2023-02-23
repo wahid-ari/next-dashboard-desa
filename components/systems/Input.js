@@ -1,8 +1,8 @@
-export default function Input({ className, type, name, placeholder, value, onChange, ...rest }) {
+export default function Input({ className, type, name, placeholder, value, onChange, ...props }) {
   return (
     <div className='mb-4'>
       <input
-        {...rest}
+        {...props}
         type={type}
         name={name}
         placeholder={placeholder}
@@ -18,11 +18,11 @@ export default function Input({ className, type, name, placeholder, value, onCha
   );
 }
 
-Input.disabled = ({ className, type, name, placeholder, defaultValue, ...rest }) => {
+Input.disabled = ({ className, type, name, placeholder, defaultValue, ...props }) => {
   return (
     <div className='mb-4'>
       <input
-        {...rest}
+        {...props}
         type={type}
         name={name}
         placeholder={placeholder}

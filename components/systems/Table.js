@@ -80,10 +80,10 @@ export default function Table({
   );
 }
 
-Table.tr = ({ className, children, ...rest }) => {
+Table.tr = ({ className, children, ...props }) => {
   return (
     <tr
-      {...rest}
+      {...props}
       className={`${
         className ? className + ' ' : ''
       }text-sm border-b bg-white text-neutral-600 hover:bg-gray-50 dark:border-neutral-800 dark:bg-transparent dark:text-neutral-200`}
@@ -93,9 +93,9 @@ Table.tr = ({ className, children, ...rest }) => {
   );
 };
 
-Table.td = ({ className, shrink, children, ...rest }) => {
+Table.td = ({ className, shrink, children, ...props }) => {
   return (
-    <td {...rest} className={`${className ? className + ' ' : ''}p-4 ${shrink ? 'w-1' : ''}`}>
+    <td {...props} className={`${className ? className + ' ' : ''}p-4 ${shrink ? 'w-1' : ''}`}>
       {children}
     </td>
   );

@@ -42,7 +42,7 @@ export default function Layout({ children, title, description }) {
           {/* Show on Desktop */}
           <div
             className={clsx(
-              'hidden items-center justify-between gap-x-4 border-b py-3 dark:border-neutral-800 px-4 lg:flex',
+              'hidden items-center justify-between gap-x-4 border-b py-3 px-4 dark:border-neutral-800 lg:flex',
               'sticky top-0 z-40',
               'bg-white/50 dark:bg-neutral-900/30',
               'backdrop-blur-md backdrop-filter'

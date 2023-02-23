@@ -17,7 +17,7 @@ export default function Navbar() {
     <div
       className={clsx(
         'sticky top-0 z-40 h-11 dark:text-neutral-50 lg:hidden',
-        'flex w-full items-center justify-between gap-4 border-b p-3 dark:border-neutral-800 px-5',
+        'flex w-full items-center justify-between gap-4 border-b p-3 px-5 dark:border-neutral-800',
         'bg-white/50 dark:bg-neutral-900/30',
         'backdrop-blur-md backdrop-filter'
       )}

@@ -35,6 +35,8 @@ import { tabledata } from '@utils/tableData';
 import Select from 'react-select';
 import SelectBox from '@components/systems/SelectBox';
 import SelectNative from '@components/systems/SelectNative';
+import TextArea from '@components/systems/TextArea';
+import InputDebounce from '@components/systems/InputDebounce';
 
 const searchBoxData = [
   {
@@ -76,6 +78,7 @@ const selectBoxData = [
 ];
 
 export default function Example() {
+  const [inputDebounceValue, setInputDebounceValue] = useState();
   const [openDialog, setOpenDialog] = useState(false);
   const [openDangerDialog, setOpenDangerDialog] = useState(false);
 
@@ -347,7 +350,16 @@ export default function Example() {
             <Link href='#labeledinputdisabled'>LabeledInput.disabled</Link>
           </span>
           <span className='mb-3 block underline'>
-            <Link href='#select'>Select</Link>
+            <Link href='#inputdebounce'>InputDebounce</Link>
+          </span>
+          <span className='mb-3 block underline'>
+            <Link href='#textarea'>TextArea</Link>
+          </span>
+          <span className='mb-3 block underline'>
+            <Link href='#selectnative'>SelectNative</Link>
+          </span>
+          <span className='mb-3 block underline'>
+            <Link href='#selectnativeoption'>SelectNative.option</Link>
           </span>
           <span className='mb-3 block underline'>
             <Link href='#multipleselect'>MultipleSelect</Link>
@@ -451,7 +463,7 @@ export default function Example() {
         name='Dialog'
         noClassName
         noProps
-        props={['open', 'setOpen', 'title', 'children', 'isDanger', 'onClose', 'onConfirm', 'showIcon']}
+        props={['open', 'setOpen', 'title', 'isDanger', 'onClose', 'onConfirm', 'showIcon']}
       >
         <Button onClick={() => setOpenDialog(true)}>Open Dialog</Button>
         <br />
@@ -510,15 +522,20 @@ export default function Example() {
         noClassName
         noProps
         noChildren
-        props={['label', 'value', 'placeholder', 'onChange', 'options']}
+        props={['label', 'value', 'placeholder', 'onChange', 'options', 'placeholder']}
       >
-        <SelectBox label='Select Box' value={selectedBox} onChange={setSelectedBox} options={selectBoxData}></SelectBox>
+        <SelectBox
+          placeholder='Select'
+          label='Select Box'
+          value={selectedBox}
+          onChange={setSelectedBox}
+          options={selectBoxData}
+        ></SelectBox>
       </Wrapper>
 
       <Wrapper
         id='reactselect'
         name='ReactSelect'
-        noClassName
         noProps
         noChildren
         props={[
@@ -529,7 +546,6 @@ export default function Example() {
           'onChange',
           'placeholder',
           'name',
-          'className',
           'classNamePrefix',
           'theme',
         ]}
@@ -557,7 +573,14 @@ export default function Example() {
         />
       </Wrapper>
 
-      <Wrapper id='reacttable' name='React Table' props={['columns', 'data', 'page_size', 'bordered']} noProps noWrap>
+      <Wrapper
+        id='reacttable'
+        name='React Table'
+        props={['columns', 'data', 'page_size', 'bordered', 'itemPerPage', 'ref']}
+        noProps
+        noWrap
+        noChildren
+      >
         <LabeledInput
           label='Search Data'
           id='caridata'
@@ -744,11 +767,16 @@ export default function Example() {
         <Heading>Heading 4 (default)</Heading>
       </Wrapper>
 
-      <Wrapper id='input' name='Input' props={['type', 'name', 'placeholder', 'value', 'onChange']}>
+      <Wrapper id='input' name='Input' props={['type', 'name', 'placeholder', 'value', 'onChange']} noChildren>
         <Input name='input' placeholder='Input default' />
       </Wrapper>
 
-      <Wrapper id='inputdisabled' name='Input.disabled' props={['type', 'name', 'placeholder', 'defaultValue']}>
+      <Wrapper
+        id='inputdisabled'
+        name='Input.disabled'
+        props={['type', 'name', 'placeholder', 'defaultValue']}
+        noChildren
+      >
         <Input.disabled name='input' placeholder='Input default' defaultValue='Has a value' />
       </Wrapper>
 
@@ -760,6 +788,7 @@ export default function Example() {
         id='labeledinput'
         name='LabeledInput'
         props={['id', 'label', 'name', 'type', 'placeholder', 'value', 'onChange']}
+        noChildren
       >
         <LabeledInput label='Email' name='email' placeholder='Email' type='text' />
         <LabeledInput label='Password' name='password' placeholder='Your Password' type='password' />
@@ -769,6 +798,7 @@ export default function Example() {
         id='labeledinputdisabled'
         name='LabeledInput.disabled'
         props={['label', 'type', 'name', 'placeholder', 'defaultValue']}
+        noChildren
       >
         <LabeledInput.disabled
           label='Confirmation Password'
@@ -778,7 +808,43 @@ export default function Example() {
         />
       </Wrapper>
 
-      <Wrapper id='select' name='Select' props={['label', 'id', 'name', 'value', 'onChange']}>
+      <Wrapper
+        id='inputdebounce'
+        name='InputDebounce'
+        props={[
+          'id',
+          'label',
+          'type',
+          'name',
+          'placeholder',
+          'value',
+          'onChange',
+          'className',
+          'wrapperClassName',
+          'debounce',
+        ]}
+        noChildren
+      >
+        <InputDebounce
+          label='Input Debounce'
+          name='inputdebounce'
+          placeholder='Input Debounce'
+          value={inputDebounceValue}
+          onChange={(value) => setInputDebounceValue(value)}
+        />
+        <Text>{inputDebounceValue}</Text>
+      </Wrapper>
+
+      <Wrapper
+        id='textarea'
+        name='TextArea'
+        props={['label', 'className', 'id', 'name', 'placeholder', 'value', 'onChange', 'height', '...props']}
+        noChildren
+      >
+        <TextArea label='TextArea' name='textarea' placeholder='text area' />
+      </Wrapper>
+
+      <Wrapper id='selectnative' name='SelectNative' props={['label', 'id', 'name', 'value', 'onChange']}>
         <SelectNative
           label='Select Color'
           id='color'
@@ -790,6 +856,11 @@ export default function Example() {
           <SelectNative.option value='blue'>Blue</SelectNative.option>
           <SelectNative.option value='green'>Green</SelectNative.option>
         </SelectNative>
+      </Wrapper>
+
+      <Wrapper id='selectnativeoption' name='SelectNative.option' props={['value']} noClassName>
+        <SelectNative.option value='red'>Red</SelectNative.option>
+        <SelectNative.option value='blue'>Blue</SelectNative.option>
       </Wrapper>
 
       <Wrapper
