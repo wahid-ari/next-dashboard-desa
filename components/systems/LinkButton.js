@@ -35,7 +35,7 @@ LinkButton.tertary = ({ className, href, children, ...props }) => {
       {...props}
       className={`${
         className ? className + ' ' : ''
-      }text-sm rounded px-3 py-1.5 font-medium text-neutral-600 outline-none transition-all hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-200`}
+      }text-sm rounded px-3 py-1.5 font-medium text-neutral-600 outline-none transition-all hover:bg-neutral-100  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-200`}
     >
       {children}
     </Link>

@@ -1,4 +1,5 @@
 import { PlusIcon } from '@heroicons/react/solid';
+import clsx from 'clsx';
 import { useRef } from 'react';
 import Button from './Button';
 
@@ -31,9 +32,12 @@ export default function FileInput({ id, className, label, type = 'file', name, v
         name={name}
         value=''
         onChange={onChange}
-        className={`${
-          className ? className + ' ' : ''
-        }hidden mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-[0.6rem] text-sm font-medium outline-none ring-gray-300 transition-all focus:border-blue-800 focus:ring-1 focus:ring-blue-800 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:ring-neutral-600 dark:focus:border-sky-300 dark:focus:ring-sky-900`}
+        className={clsx(
+          className,
+          'mt-2 hidden w-full rounded-md bg-white px-4 py-[0.6rem] text-sm font-medium transition-all dark:bg-neutral-900 dark:text-neutral-100',
+          'border border-gray-300 outline-none focus:border-blue-800 dark:border-neutral-800 dark:focus:border-sky-300',
+          'ring-gray-300 focus:ring-1 focus:ring-blue-800 dark:ring-neutral-600 dark:focus:ring-sky-900'
+        )}
         required
       />
     </div>

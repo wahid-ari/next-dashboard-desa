@@ -233,7 +233,10 @@ export default function Example() {
         Cell: (row) => {
           const { values, original } = row.cell.row;
           return (
-            <Link href={`#`} className='text-sm font-medium text-sky-500 hover:text-sky-600'>
+            <Link
+              href={`#`}
+              className='rounded text-sm font-medium text-sky-500 hover:text-sky-600 focus:outline-none focus:ring-1 focus:ring-sky-400'
+            >
               {values.name}
             </Link>
           );
@@ -707,6 +710,7 @@ export default function Example() {
           </Button.danger>
           <Button.secondary>Secondary</Button.secondary>
           <Button.tertary>Tertary</Button.tertary>
+          <Button disabled>Disabled</Button>
         </div>
       </Wrapper>
 

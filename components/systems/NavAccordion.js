@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/solid';
+import clsx from 'clsx';
 
 export default function NavAccordion({ title, routeName, icon, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,15 +24,22 @@ export default function NavAccordion({ title, routeName, icon, children }) {
       <Disclosure defaultOpen={isOpen}>
         {({ open }) => (
           <>
-            <Disclosure.Button className='mt-1 flex w-full items-center justify-start gap-2 rounded py-2 pl-3 text-gray-700 outline-none transition-all hover:text-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500 dark:text-neutral-300 dark:hover:text-sky-500'>
+            <Disclosure.Button
+              className={clsx(
+                'mt-1 flex w-full items-center justify-start gap-2 rounded py-2 pl-3 transition-all',
+                'text-gray-700 hover:text-blue-600 dark:text-neutral-300 dark:hover:text-sky-500',
+                'outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500'
+              )}
+            >
               <div className='flex-grow text-left text-sm'>
                 {icon}
                 <span>{title}</span>
               </div>
               <ChevronRightIcon
-                className={`h-5 w-5 text-gray-500 transition-all duration-300 dark:text-neutral-400 ${
-                  open ? 'rotate-90 transform transition-transform' : 'transition-transform'
-                }`}
+                className={clsx(
+                  open ? 'rotate-90 transform transition-transform' : 'transition-transform',
+                  'h-5 w-5 text-gray-500 transition-all duration-300 dark:text-neutral-400'
+                )}
               />
             </Disclosure.Button>
             <Transition

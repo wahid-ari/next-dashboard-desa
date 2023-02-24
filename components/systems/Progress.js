@@ -1,7 +1,7 @@
 export default function Progress({ className, percent }) {
   return (
     <div className={`${className ? className + ' ' : ''}w-full h-1 rounded-full bg-gray-200 dark:bg-neutral-800`}>
-      <div className='h-1 rounded-full bg-blue-800 dark:bg-sky-500' style={{ width: `${percent}%` }}></div>
+      <div className='h-1 rounded-full bg-sky-500 dark:bg-sky-500' style={{ width: `${percent}%` }}></div>
     </div>
   );
 }
@@ -11,7 +11,7 @@ Progress.percentage = ({ className, percent }) => {
     <div className='w-full rounded-full bg-gray-200 dark:bg-neutral-800'>
       {percent > 0 ? (
         <div
-          className={`rounded-full bg-blue-600 p-0.5 text-center text-xs font-medium leading-none text-blue-100 ${
+          className={`rounded-full bg-sky-500 p-0.5 text-center text-xs font-medium leading-none text-sky-100 ${
             className && className
           }`}
           style={{ width: percent + '%' }}

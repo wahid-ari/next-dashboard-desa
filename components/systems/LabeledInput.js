@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 export default function LabeledInput({ id, className, label, type, name, placeholder, value, onChange, ...props }) {
   return (
     <div className='mb-4'>
@@ -12,9 +14,12 @@ export default function LabeledInput({ id, className, label, type, name, placeho
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`${
-          className ? className + ' ' : ''
-        }text-sm mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-[0.6rem] font-medium outline-none transition-all focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-sky-500 dark:focus:ring-sky-500`}
+        className={clsx(
+          className,
+          'mt-2 w-full rounded-md px-4 py-[0.6rem] text-sm font-medium transition-all dark:text-neutral-100',
+          'border-gray-300 bg-white outline-none dark:border-neutral-800 dark:bg-neutral-900',
+          'border focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:focus:border-sky-500 dark:focus:ring-sky-500'
+        )}
         autoComplete='off'
         required
       />
@@ -34,9 +39,11 @@ LabeledInput.disabled = ({ className, label, type, name, placeholder, defaultVal
         name={name}
         placeholder={placeholder}
         defaultValue={defaultValue}
-        className={`${
-          className ? className + ' ' : ''
-        }text-sm mt-2 w-full cursor-not-allowed rounded-md border border-gray-300 bg-gray-100 px-4 py-[0.6rem] font-medium outline-none transition-all dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-500`}
+        className={clsx(
+          className,
+          'mt-2 w-full cursor-not-allowed rounded-md border border-gray-300 bg-gray-100 px-4 py-[0.6rem] text-sm',
+          'font-medium outline-none transition-all dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-500'
+        )}
         disabled
       />
     </div>

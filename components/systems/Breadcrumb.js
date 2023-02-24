@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChevronRightIcon } from '@heroicons/react/solid';
+import clsx from 'clsx';
 
 export default function Breadcrumb() {
   const router = useRouter();
@@ -34,7 +35,11 @@ export default function Breadcrumb() {
           <Link
             href='/'
             passHref
-            className='inline-flex items-center rounded text-gray-700 transition-all hover:text-gray-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500 dark:text-neutral-300 dark:hover:text-neutral-100'
+            className={clsx(
+              'inline-flex items-center rounded transition-all',
+              'text-gray-700 hover:text-gray-900 dark:text-neutral-300 dark:hover:text-neutral-100',
+              'focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500'
+            )}
           >
             <ChevronRightIcon className='mr-1 h-5 w-5 text-gray-400' />
             Home
@@ -56,7 +61,10 @@ export default function Breadcrumb() {
                   <ChevronRightIcon className='h-5 w-5 text-gray-400' />
                   <Link
                     href={(index !== 0 ? '/' : '') + paths.slice(0, index).join('/') + '/' + path}
-                    className='ml-1 rounded text-gray-400 transition-all hover:text-gray-700 focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500 dark:text-neutral-500 dark:hover:text-neutral-400'
+                    className={clsx(
+                      'ml-1 rounded text-gray-400 transition-all hover:text-gray-700 dark:text-neutral-500 dark:hover:text-neutral-400',
+                      'focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500'
+                    )}
                   >
                     {capitalizeFirstLetter(path)}
                   </Link>
