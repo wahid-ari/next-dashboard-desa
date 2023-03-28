@@ -285,7 +285,13 @@ export default function Example() {
 
   return (
     <Layout title='Design System'>
-      <Title>Example</Title>
+      <div className="relative">
+        <Title>Example</Title>
+        <span className="absolute top-1 left-24 flex h-5 w-5 animate-bounce items-center justify-center">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+          <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-500" />
+        </span>
+      </div>
 
       <Wrapper id='tableofcontent' name='Table of Content' noChildren noClassName noProps>
         <div className='columns-2 text-blue-600 dark:text-sky-500 sm:columns-3'>
