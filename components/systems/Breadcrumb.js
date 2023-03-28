@@ -41,7 +41,7 @@ export default function Breadcrumb() {
               'focus-visible:outline-none focus-visible:ring focus-visible:ring-sky-500'
             )}
           >
-            <ChevronRightIcon className='mr-1 h-5 w-5 text-gray-400' />
+            <ChevronRightIcon className='mr-1 h-5 w-5 text-gray-500 dark:text-neutral-400' />
             Home
           </Link>
         </li>
@@ -50,7 +50,7 @@ export default function Breadcrumb() {
             if (index === paths.length - 1) {
               return (
                 <li aria-current='page' key={index} className='flex items-center'>
-                  <ChevronRightIcon className='h-5 w-5 text-gray-400' />
+                  <ChevronRightIcon className='h-5 w-5 text-gray-500 dark:text-neutral-400' />
                   <span className='ml-1 mr-4 text-blue-600 dark:text-sky-500'>{capitalizeFirstLetter(path)}</span>
                 </li>
               );

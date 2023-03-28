@@ -553,7 +553,11 @@ export default function Example() {
           'theme',
         ]}
       >
+        <label htmlFor='category' className='mb-2 block text-sm text-neutral-800 dark:text-gray-200'>
+          Category
+        </label>
         <Select
+          aria-label='React Select'
           options={reactSelectData}
           isMulti
           noOptionsMessage={() => 'Not Found'}
@@ -561,7 +565,7 @@ export default function Example() {
           onChange={setReactSelect}
           placeholder='Search or Select'
           name='category'
-          className='mb-4 rounded'
+          className='rounded'
           classNamePrefix='react-select'
           theme={(theme) => ({
             ...theme,

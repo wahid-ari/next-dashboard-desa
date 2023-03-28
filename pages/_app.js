@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 function MyApp({ Component, pageProps }) {
   // const router = useRouter();
   return (
-    <ThemeProvider attribute='class' storageKey='theme'>
+    <ThemeProvider attribute='class' storageKey='theme' enableSystem={false} defaultTheme='light'>
       <GlobalProvider>
         {/* <AxiosConfigProvider> */}
         <main className={inter.className}>

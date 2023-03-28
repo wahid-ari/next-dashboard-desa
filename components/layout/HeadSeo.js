@@ -9,7 +9,7 @@ export default function HeadSeo({ title, description }) {
   let headTitle = `${title}`;
   let headDescription = `${description ? description : title}`;
 
-  let ogTitle = title.split('- MyMovie');
+  let ogTitle = title.split('- Desa Digital');
 
   const socialCard =
     route === '/' ? `${process.env.API_ROUTE}/og.png` : `${process.env.API_ROUTE}/api/og?title=${ogTitle[0]}`;

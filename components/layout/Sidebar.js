@@ -1,7 +1,15 @@
 import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { GlobalContext } from '@utils/GlobalContext';
-import { XIcon, LogoutIcon, ViewGridIcon, CogIcon, CashIcon, TemplateIcon } from '@heroicons/react/outline';
+import {
+  XIcon,
+  LogoutIcon,
+  ViewGridIcon,
+  CogIcon,
+  CashIcon,
+  TemplateIcon,
+  ExternalLinkIcon,
+} from '@heroicons/react/outline';
 import NavLink from '@components/systems/NavLink';
 import NavAccordion from '@components/systems/NavAccordion';
 import clsx from 'clsx';
@@ -14,6 +22,12 @@ export default function Sidebar() {
   const hideMenu = () => {
     setShowNav(false);
   };
+
+  // https://stackoverflow.com/questions/54989513/react-prevent-scroll-when-modal-is-open
+  useEffect(() => {
+    if (showNav) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'visible';
+  }, [showNav]);
 
   useEffect(() => {
     setShowNav(false);
@@ -67,6 +81,21 @@ export default function Sidebar() {
         <NavLink href='/settings' icon={<CogIcon className='h-4 w-4' />} className='mt-1'>
           Settings
         </NavLink>
+
+        <a
+          href='https://nextra-v2x.vercel.app'
+          className={clsx(
+            'mt-1 mb-1 flex w-full items-center justify-start gap-2 px-3 py-2 transition-all',
+            'rounded text-sm font-medium text-gray-600 hover:text-sky-600 dark:text-neutral-300',
+            'hover:bg-gray-100 dark:hover:bg-neutral-800 dark:hover:text-sky-500',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500'
+          )}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <ExternalLinkIcon className='h-4 w-4' />
+          Docs
+        </a>
       </div>
 
       <hr className='dark:border-neutral-800' />
