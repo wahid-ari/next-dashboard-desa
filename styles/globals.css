@@ -98,3 +98,7 @@ html {
 .react-select__option:hover {
   color: white;
 }
+
+.react-select__option--is-focused {
+  color: white !important;
+}

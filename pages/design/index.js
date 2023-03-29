@@ -203,9 +203,9 @@ export default function Example() {
     dismissModal();
   };
 
-  const onNext = () => {};
+  const onNext = () => { };
 
-  const onPrev = () => {};
+  const onPrev = () => { };
 
   const [selectedSearchBox, setSelectedSearchBox] = useState();
   const [querySearchBox, setQuerySearchBox] = useState('');
@@ -213,8 +213,8 @@ export default function Example() {
     querySearchBox === ''
       ? searchBoxData
       : searchBoxData.filter((item) =>
-          item.name.toLowerCase().replace(/\s+/g, '').includes(querySearchBox.toLowerCase().replace(/\s+/g, ''))
-        );
+        item.name.toLowerCase().replace(/\s+/g, '').includes(querySearchBox.toLowerCase().replace(/\s+/g, ''))
+      );
 
   const column = useMemo(
     () => [
@@ -264,7 +264,7 @@ export default function Example() {
               </Link>
               <Button.danger
                 className='!py-[2px] !px-[6px]'
-                // onClick={() => handleShowDeleteModal(values.id, values.name)}
+              // onClick={() => handleShowDeleteModal(values.id, values.name)}
               >
                 Delete
               </Button.danger>
@@ -571,7 +571,10 @@ export default function Example() {
           onChange={setReactSelect}
           placeholder='Search or Select'
           name='category'
-          className='rounded'
+          classNames={{
+            option: (option) =>
+              option.isSelected ? '!border-red-600' : '!border-grey-300',
+          }}
           classNamePrefix='react-select'
           theme={(theme) => ({
             ...theme,
