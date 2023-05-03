@@ -203,9 +203,9 @@ export default function Example() {
     dismissModal();
   };
 
-  const onNext = () => { };
+  const onNext = () => {};
 
-  const onPrev = () => { };
+  const onPrev = () => {};
 
   const [selectedSearchBox, setSelectedSearchBox] = useState();
   const [querySearchBox, setQuerySearchBox] = useState('');
@@ -213,8 +213,8 @@ export default function Example() {
     querySearchBox === ''
       ? searchBoxData
       : searchBoxData.filter((item) =>
-        item.name.toLowerCase().replace(/\s+/g, '').includes(querySearchBox.toLowerCase().replace(/\s+/g, ''))
-      );
+          item.name.toLowerCase().replace(/\s+/g, '').includes(querySearchBox.toLowerCase().replace(/\s+/g, ''))
+        );
 
   const column = useMemo(
     () => [
@@ -264,7 +264,7 @@ export default function Example() {
               </Link>
               <Button.danger
                 className='!py-[2px] !px-[6px]'
-              // onClick={() => handleShowDeleteModal(values.id, values.name)}
+                // onClick={() => handleShowDeleteModal(values.id, values.name)}
               >
                 Delete
               </Button.danger>
@@ -285,11 +285,11 @@ export default function Example() {
 
   return (
     <Layout title='Design System'>
-      <div className="relative">
+      <div className='relative'>
         <Title>Example</Title>
-        <span className="absolute top-1 left-24 flex h-5 w-5 animate-bounce items-center justify-center">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
-          <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-500" />
+        <span className='absolute top-1 left-24 flex h-5 w-5 animate-bounce items-center justify-center'>
+          <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75' />
+          <span className='relative inline-flex h-3 w-3 rounded-full bg-sky-500' />
         </span>
       </div>
 
@@ -572,8 +572,7 @@ export default function Example() {
           placeholder='Search or Select'
           name='category'
           classNames={{
-            option: (option) =>
-              option.isSelected ? '!border-red-600' : '!border-grey-300',
+            option: (option) => (option.isSelected ? '!border-red-600' : '!border-grey-300'),
           }}
           classNamePrefix='react-select'
           theme={(theme) => ({
